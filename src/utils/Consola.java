@@ -7,7 +7,7 @@ import java.util.*;
  * ...
  * @author Alejandro Winkler - Miguel Diab
  * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
- * @version 0.05alpha 05/05/2008
+ * @since 0.05alpha 05/05/2008
  * @see         
  */
 public class Consola {
@@ -21,7 +21,7 @@ public class Consola {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static void print(String s){
@@ -35,7 +35,7 @@ public class Consola {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static void println(String s){
@@ -50,7 +50,7 @@ public class Consola {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static void print(int i){
@@ -64,7 +64,7 @@ public class Consola {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static  void println(int i){
@@ -77,7 +77,7 @@ public class Consola {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static void print(double d){
@@ -91,7 +91,7 @@ public class Consola {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static  void println(double d){
@@ -104,7 +104,7 @@ public class Consola {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static void print(char c){
@@ -118,7 +118,7 @@ public class Consola {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static  void println(char c){
@@ -131,7 +131,7 @@ public class Consola {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static String leer(){
@@ -148,7 +148,7 @@ public class Consola {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static  String leer(String s){
@@ -156,6 +156,33 @@ public class Consola {
 		return leer();
 	}
 	
+  /**
+   * Pide un parámetro, mostrando el valor a retornar si el usuario
+   * presiona enter sin ingresar un valor.
+   * Si el usuario ingresa un espacio en blanco, devuelve vacío
+   * 
+   * @param  s  Texto a mostrar
+   * @param actual  Valor a retornar al presionar enter
+   * @return Texto ingresado por consola, 'actual' si entrada es "", "" si entrada es " " 
+   * @author Alejandro Winkler - Miguel Diab
+   * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
+   * @since 0.05alpha 05/05/2008
+   * @see         
+   */
+  public static  String leer(String s, String actual){
+    String entrada = "";
+    print(s + " [" + actual + "] :");
+    entrada = leer();
+    if (entrada =="") {
+      return actual;
+    }
+    else if (entrada==" "){
+      return "";
+    }
+    else {
+      return entrada;  
+    }    
+  }
 	/**
 	 * ...
 	 * 
@@ -163,7 +190,7 @@ public class Consola {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static int leerInt(){
@@ -176,7 +203,7 @@ public class Consola {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static int leerInt(String msg){
@@ -198,7 +225,7 @@ public class Consola {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static int menu(ArrayList opciones){

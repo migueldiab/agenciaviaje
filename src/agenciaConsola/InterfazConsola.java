@@ -10,7 +10,7 @@ import utils.Consola;
  * 
  * @author Alejandro Winkler - Miguel Diab
  * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
- * @version 0.05alpha 05/05/2008
+ * @since 0.05alpha 05/05/2008
  */
 public class InterfazConsola {
   /**
@@ -20,7 +20,7 @@ public class InterfazConsola {
 	 *  
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 */
   public static void menuPrincipal() {
     ArrayList<String> opciones = new ArrayList<String>();
@@ -59,7 +59,7 @@ public class InterfazConsola {
 	 * 
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-   * @version 0.05alpha 05/05/2008
+   * @since 0.05alpha 05/05/2008
 	 */
   public static void menuAdministracion() {
 	ArrayList<String> opciones = new ArrayList<String>();
@@ -89,7 +89,7 @@ public class InterfazConsola {
    * 
    * @author Alejandro Winkler - Miguel Diab
    * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-   * @version 0.05alpha 05/05/2008
+   * @since 0.05alpha 05/05/2008
    */
   public static void menuUsuario() {
   ArrayList<String> opciones = new ArrayList<String>();
@@ -119,7 +119,7 @@ public class InterfazConsola {
    * Medios, Ciudades y Países.
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 */
   public static void menuOperaciones() {
 	  ArrayList<String> opciones = new ArrayList<String>();
@@ -156,7 +156,7 @@ public class InterfazConsola {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static void menuListados() {
