@@ -8,7 +8,7 @@ import usuarios.*;
  * 
  * @author Alejandro Winkler - Miguel Diab
  * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
- * @version 0.05alpha 05/05/2008
+ * @since 0.05alpha 05/05/2008
  * @see         
  */
 public class InterfazAgencia {
@@ -23,7 +23,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static void AgregarPais(Pais p){
@@ -37,7 +37,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static void BorrarPais(Pais p){
@@ -51,7 +51,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static Pais GetPaisAModificar(int index){
@@ -65,7 +65,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static ArrayList<Pais> GetSortedPaises(){
@@ -79,7 +79,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static ArrayList<Pais> GetPaises(){
@@ -94,7 +94,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static void AgregarMedio(Medio m){
@@ -108,7 +108,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static void BorrarMedio(Medio m){
@@ -122,7 +122,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static Medio GetMedioAModificar(int index){
@@ -136,7 +136,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static ArrayList<Medio> GetSortedMedios(){
@@ -150,7 +150,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static ArrayList<Medio> GetMedios(){
@@ -165,7 +165,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static void AgregarViaje(Viaje v){
@@ -179,7 +179,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static void BorrarViaje(Viaje v){
@@ -193,7 +193,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static Viaje GetViajeAModificar(int index){
@@ -207,7 +207,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static ArrayList<Viaje> GetSortedViajes(){
@@ -221,7 +221,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static ArrayList<Viaje> GetViajes(){
@@ -236,7 +236,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static void AgregarUsuario(Usuario u){
@@ -250,7 +250,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static void BorrarUsuario(Usuario u){
@@ -264,7 +264,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static Usuario GetUsuarioAModificar(int index){
@@ -278,7 +278,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static ArrayList<Usuario> GetUsuarios(){
@@ -292,7 +292,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static ArrayList<Usuario> GetSortedUsuarios(){
@@ -306,7 +306,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static void AgregarTipoUsuario(TipoUsuario t){
@@ -320,7 +320,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static void BorrarTipoUsuario(TipoUsuario t){
@@ -334,7 +334,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static TipoUsuario GetTipoUsuarioAModificar(int index){
@@ -348,7 +348,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static ArrayList<TipoUsuario> getTiposUsuario(){
@@ -362,7 +362,7 @@ public class InterfazAgencia {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static ArrayList<TipoUsuario> GetSortedTiposUsuario(){

@@ -9,7 +9,7 @@ import usuarios.*;
  * 
  * @author Alejandro Winkler - Miguel Diab
  * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
- * @version 0.05alpha 05/05/2008
+ * @since 0.05alpha 05/05/2008
  * @see         
  */
 public class Program {
@@ -21,7 +21,7 @@ public class Program {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public static void main(String[] args) {
@@ -37,7 +37,7 @@ public class Program {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   private static void CargarDatosPrueba(){
@@ -86,7 +86,7 @@ public class Program {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   private static void CrearPaises(){
@@ -104,7 +104,7 @@ public class Program {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   private static void CrearCiudades(){
@@ -130,7 +130,7 @@ public class Program {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   private static void CrearMedios(){
@@ -148,7 +148,7 @@ public class Program {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   private static void AgregarViajes(){
@@ -168,7 +168,7 @@ public class Program {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   private static void AgregarTramos(){
@@ -207,7 +207,7 @@ public class Program {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   private static void AgregarSalidasYHorarios(){
@@ -270,7 +270,7 @@ public class Program {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   private static void CrearTiposUsuario(){
@@ -287,7 +287,7 @@ public class Program {
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   private static void CrearUsuarios(){

@@ -9,7 +9,7 @@ import utils.Canonic;
  * 
  * @author Alejandro Winkler - Miguel Diab
  * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
- * @version 0.05alpha 05/05/2008
+ * @since 0.05alpha 05/05/2008
  * @see         
  */
 public class Viaje implements Canonic, Comparable<Object>{
@@ -27,7 +27,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public String get_Nombre() {
@@ -40,7 +40,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public void set_Nombre(String nombre) {
@@ -53,7 +53,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public int get_Capacidad() {
@@ -66,7 +66,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public void set_Capacidad(int capacidad) {
@@ -79,7 +79,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public ArrayList<Tramo> get_Tramos() {
@@ -92,7 +92,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   private void set_Tramos(ArrayList<Tramo> tramos) {
@@ -105,7 +105,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public ArrayList<Salida> get_Salidas() {
@@ -118,7 +118,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   private void set_Salidas(ArrayList<Salida> salidas) {
@@ -133,7 +133,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Viaje(){}
@@ -145,7 +145,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Viaje(String pNombre, int pCapacidad){
@@ -160,7 +160,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Viaje(Viaje v){
@@ -178,7 +178,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public String toString(){
@@ -192,7 +192,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public boolean equals(Object obj){
@@ -219,7 +219,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public int compareTo(Object o){
@@ -239,7 +239,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public boolean AgregarSalida(Salida s){
@@ -260,7 +260,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public boolean BorrarSalida(Salida s){
@@ -281,7 +281,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Salida GetSalidaAModificar(int index){
@@ -300,7 +300,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public ArrayList<Salida> GetSortedSalidas(){
@@ -315,7 +315,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   private int GetNuevoIdSalida(){
@@ -329,7 +329,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public boolean AgregarTramo(Tramo t){
@@ -349,7 +349,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public boolean BorrarTramo(Tramo t){
@@ -370,7 +370,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Tramo GetTramoAModificar(int index){
@@ -389,7 +389,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public ArrayList<Tramo> GetSortedTramos(){
@@ -404,7 +404,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Ciudad GetCiudadOrigen(){
@@ -418,7 +418,7 @@ public class Viaje implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Ciudad GetCiudadDestino(){

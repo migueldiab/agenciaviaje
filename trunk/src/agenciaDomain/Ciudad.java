@@ -5,7 +5,7 @@ import utils.Canonic;
 /**
  * Contiene las ciudades por las que pueden circular los servicios de transporte
  * @author Alejandro Winkler - Miguel Diab
- * @version 0.05alpha 05/05/2008
+ * @since 0.05alpha 05/05/2008
  */
 public class Ciudad implements Canonic, Comparable<Object>{
 	//attributes
@@ -19,7 +19,7 @@ public class Ciudad implements Canonic, Comparable<Object>{
 	 * Devuelve el identificador de la ciudad a la que hace referencia.
 	 * @return  Código identificador de Ciudad
 	 * @author Alejandro Winkler - Miguel Diab
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 */
   public String get_IdCiudad() {
 		return _IdCiudad;
@@ -32,7 +32,7 @@ public class Ciudad implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public void set_IdCiudad(String idCiudad) {
@@ -45,7 +45,7 @@ public class Ciudad implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public String get_Nombre() {
@@ -58,7 +58,7 @@ public class Ciudad implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public void set_Nombre(String nombre) {
@@ -71,7 +71,7 @@ public class Ciudad implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Pais get_Pais() {
@@ -84,7 +84,7 @@ public class Ciudad implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public void set_Pais(Pais pais) {
@@ -99,7 +99,7 @@ public class Ciudad implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Ciudad(){}
@@ -111,7 +111,7 @@ public class Ciudad implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Ciudad(String pIdCiudad, String pNombre, Pais pPais){
@@ -127,7 +127,7 @@ public class Ciudad implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Ciudad(Ciudad c){
@@ -144,7 +144,7 @@ public class Ciudad implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public String toString(){
@@ -158,7 +158,7 @@ public class Ciudad implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public boolean equals(Object obj){
@@ -185,7 +185,7 @@ public class Ciudad implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public int compareTo(Object o){

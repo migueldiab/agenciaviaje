@@ -7,7 +7,7 @@ import utils.Canonic;
  * 
  * @author Alejandro Winkler - Miguel Diab
  * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
- * @version 0.05alpha 05/05/2008
+ * @since 0.05alpha 05/05/2008
  * @see         
  */
 public class Medio implements Canonic, Comparable<Object>{
@@ -23,7 +23,7 @@ public class Medio implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public String get_IdMedio() {
@@ -36,7 +36,7 @@ public class Medio implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public void set_IdMedio(String idMedio) {
@@ -49,7 +49,7 @@ public class Medio implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public String get_Descripcion() {
@@ -62,7 +62,7 @@ public class Medio implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public void set_Descripcion(String descripcion) {
@@ -77,7 +77,7 @@ public class Medio implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Medio(){}
@@ -89,7 +89,7 @@ public class Medio implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Medio(String pIdMedio, String pDescripcion){
@@ -104,7 +104,7 @@ public class Medio implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Medio(Medio m){
@@ -120,7 +120,7 @@ public class Medio implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public String toString(){
@@ -134,7 +134,7 @@ public class Medio implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public boolean equals(Object obj){
@@ -161,7 +161,7 @@ public class Medio implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public int compareTo(Object o){

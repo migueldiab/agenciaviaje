@@ -9,7 +9,7 @@ import utils.Canonic;
  * 
  * @author Alejandro Winkler - Miguel Diab
  * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
- * @version 0.05alpha 05/05/2008
+ * @since 0.05alpha 05/05/2008
  * @see         
  */
 public class Pais implements Canonic, Comparable<Object>{
@@ -26,7 +26,7 @@ public class Pais implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public String get_IdPais() {
@@ -39,7 +39,7 @@ public class Pais implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public void set_IdPais(String idPais) {
@@ -52,7 +52,7 @@ public class Pais implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public String get_Nombre() {
@@ -65,7 +65,7 @@ public class Pais implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public void set_Nombre(String nombre) {
@@ -78,7 +78,7 @@ public class Pais implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public ArrayList<Ciudad> get_Ciudades() {
@@ -93,7 +93,7 @@ public class Pais implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Pais(){}
@@ -105,7 +105,7 @@ public class Pais implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Pais(String pIdPais, String pNombre){
@@ -120,7 +120,7 @@ public class Pais implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Pais(Pais p){
@@ -136,7 +136,7 @@ public class Pais implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public String toString(){
@@ -150,7 +150,7 @@ public class Pais implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public boolean equals(Object obj){
@@ -177,7 +177,7 @@ public class Pais implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public int compareTo(Object o){
@@ -197,7 +197,7 @@ public class Pais implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public boolean AgregarCiudad(Ciudad c){
@@ -217,7 +217,7 @@ public class Pais implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public boolean BorrarCiudad(Ciudad c){
@@ -238,7 +238,7 @@ public class Pais implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public Ciudad GetCiudadAModificar(int index){
@@ -257,7 +257,7 @@ public class Pais implements Canonic, Comparable<Object>{
 	 * @return      
 	 * @author Alejandro Winkler - Miguel Diab
 	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
-	 * @version 0.05alpha 05/05/2008
+	 * @since 0.05alpha 05/05/2008
 	 * @see         
 	 */
   public ArrayList<Ciudad> GetSortedCiudades(){
