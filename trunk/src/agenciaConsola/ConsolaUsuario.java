@@ -1,6 +1,11 @@
 package agenciaConsola;
 
+import java.util.ArrayList;
+
 import utils.Consola;
+import utils.I18n;
+import usuarios.CtrlUsuario;
+import usuarios.TipoUsuario;
 import usuarios.Usuario;
 import agenciaDomain.InterfazAgencia;
 
@@ -20,22 +25,30 @@ public class ConsolaUsuario {
    */
   public static void nuevoUsuario() {
     Usuario unUsuario = new Usuario();
-    // String contrasena = "";
-    // boolean validarContrasena = false;
+    Usuario tmpUsuario = new Usuario();
+    int idTipo = 0;
+    boolean validarContrasena = false;
     
     Consola.println("Crear nuevo Usuario");
-    unUsuario.set_Id(Consola.leer("ID Usuario : "));
-    // Buscar si usuario existe aca
-    if (unUsuario.get_Nombre()!="") {
-      if (Consola.leer("El usuario ya existe, desea modificar? S/N")=="S") {
+    tmpUsuario.set_Id(Consola.leer("ID Usuario : "));
+    unUsuario = CtrlUsuario.BuscarUsuarioPorID(tmpUsuario.get_Id());
+    if (unUsuario.get_Id().toString()!="") {
+      if (Consola.leer("El usuario ya existe, desea modificar? S/N")
+    		  .toUpperCase().equals(I18n.NO)) {
         return;
       }
     }
-    unUsuario.set_Nombre(Consola.leer("Nombre",unUsuario.get_Nombre()));
-    unUsuario.set_Apellido(Consola.leer("Apellido",unUsuario.get_Apellido()));
+    else {
+      unUsuario.set_Id(tmpUsuario.get_Id());
+    }
+    tmpUsuario.set_Nombre(Consola.leer("Nombre",unUsuario.get_Nombre()));
+    tmpUsuario.set_Apellido(Consola.leer("Apellido",unUsuario.get_Apellido()));
+    ArrayList<TipoUsuario> tipoUsuarios = CtrlUsuario.GetSortedTiposUsuario();
+    //idTipo = Consola.menu(tipoUsuarios, unUsuario);
+    tmpUsuario.set_Tipo(CtrlUsuario.GetTipoUsuarioAModificar(idTipo));
     //Consola.leer("Tipo",unUsuario.get_Tipo().toString());
     //unUsuario.set_Tipo();
-    unUsuario.set_Password(Consola.leer("Contraseña"));
+    tmpUsuario.set_Password(Consola.leer("Contraseña"));
       /*
     do {
        if (Consola.leer("Contraseña")==contrasena) {
@@ -48,14 +61,19 @@ public class ConsolaUsuario {
       }
     } while (!validarContrasena);
        */
-    String texto= Consola.leer("Confirma guardar usuario? S/N");
-    Consola.println(texto);
-    if (texto=="S") {
+    
+    if (Consola.leer("Confirma guardar usuario? S/N")
+    		.toUpperCase().equals(I18n.SI)) {
       Consola.println("Guardando Usuario");
+      unUsuario.set_Nombre(tmpUsuario.get_Nombre());
+      unUsuario.set_Apellido(tmpUsuario.get_Apellido());
+      unUsuario.set_Tipo(tmpUsuario.get_Tipo());
+      unUsuario.set_Password(tmpUsuario.get_Password());
+      
       InterfazAgencia.AgregarUsuario(unUsuario);
     }
     else {
-      Consola.println("Descartando cambios");      
+      Consola.println("Descartando cambios");
     }
   }
 }

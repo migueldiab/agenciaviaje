@@ -175,4 +175,25 @@ public class CtrlUsuario {
 		Collections.sort(getTiposUsuario());
 		return getTiposUsuario();
 	}
+  
+  /**
+	 * Busca un usuario en base a un objeto usuario dado
+	 * 
+	 * @param  
+	 * @return      
+	 * @author Alejandro Winkler - Miguel Diab
+	 * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
+	 * @since 0.05alpha 05/05/2008
+	 * @see         
+	 */
+public static Usuario BuscarUsuarioPorID(String ID){
+
+    for(Usuario unUsuario: getUsuarios()){
+      if (unUsuario.get_Id().toString().equals(ID.toString())) {
+        return unUsuario;
+      } 
+    }
+    return new Usuario();
+  }
+    
 }
