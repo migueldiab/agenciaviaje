@@ -3,6 +3,8 @@ package utils;
 import java.io.*;
 import java.util.*;
 
+import sun.io.Converters;
+
 /**
  * ...
  * @author Alejandro Winkler - Miguel Diab
@@ -173,10 +175,10 @@ public class Consola {
     String entrada = "";
     print(s + " [" + actual + "] :");
     entrada = leer();
-    if (entrada =="") {
+    if (entrada.equals("")) {
       return actual;
     }
-    else if (entrada==" "){
+    else if (entrada.equals(" ")){
       return "";
     }
     else {
@@ -218,6 +220,30 @@ public class Consola {
 		}
 		return num;
 	}
+  /**
+   * ...
+   * 
+   * @param  
+   * @return      
+   * @author Alejandro Winkler - Miguel Diab
+   * @author Diseño y Desarollo de Aplicaciones, Obligatorio (C) 2008
+   * @since 0.05alpha 05/05/2008
+   * @see         
+   */
+  public static int menu(ArrayList opciones, int defecto){
+    for(int x=0;x<opciones.size();x++){
+      println( (x+1) + "-" + opciones.get(x).toString());
+    }
+    String opcion;
+    opcion = leer("opcion ["+defecto+"] :");
+    if (opcion=="") {
+      return defecto;
+    }
+    else {
+      //return ConvertToInt(opcion);
+      return 0;
+    }
+  }
 	/**
 	 * ...
 	 * 
