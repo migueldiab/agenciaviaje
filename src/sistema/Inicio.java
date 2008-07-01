@@ -36,8 +36,25 @@ public class Inicio {
     unUsuario.setClave("abc123");
     unUsuario.setGrupo(null);
     unUsuario.setId(1);
-    
-    
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
+    SisRes.Usuarios.agregar(unUsuario);
     SisRes.Usuarios.agregar(unUsuario);
     
   }
