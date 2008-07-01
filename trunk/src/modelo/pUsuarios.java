@@ -37,4 +37,8 @@ public class pUsuarios {
     }
     return null;
   }
+  public static ArrayList<Usuario> getUsuarios() {
+    return pUsuarios.usuarios;
+  }
+  
 }

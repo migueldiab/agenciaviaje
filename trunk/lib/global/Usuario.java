@@ -2,6 +2,22 @@ package global;
 
 
 public class Usuario {
+  /* (non-Javadoc)
+   * @see java.lang.Object#equals(java.lang.Object)
+   */
+  @Override
+  public boolean equals(Object arg0) {
+    // TODO Auto-generated method stub
+    return super.equals(arg0);
+  }
+  /* (non-Javadoc)
+   * @see java.lang.Object#toString()
+   */
+  @Override
+  public String toString() {
+    // TODO Auto-generated method stub
+    return this.getNombre();
+  }
   private int    id = 0;
   private String nombre = "";
   private String clave = "";
