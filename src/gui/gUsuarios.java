@@ -25,7 +25,7 @@ import controlador.cUsuario;
 
 
 
-public class gUsuarios extends JFrame {
+public class gUsuarios {
 
   private JDialog dAbmUsuarios = null;  //  @jve:decl-index=0:visual-constraint="75,34"
   private JPanel pAbmUsuarios = null;
@@ -40,27 +40,18 @@ public class gUsuarios extends JFrame {
   private JLabel lClave1 = null;
   private JLabel lClave2 = null;
   private JLabel lGrupo = null;
-  //private JList lUsuarios = null;
-  private JScrollPane barra = null;
-  private DefaultListModel listaUsuarios = new DefaultListModel();
+  private JScrollPane pUsuarios = null;
+  private JList lUsuarios = null;  
+  private DefaultListModel listaUsuarios = null;  //  @jve:decl-index=0:visual-constraint="538,137"
   private JTextField tBuscar = null;
   private JButton bBuscar = null;
-  /**
-   * This method initializes dAbmUsuarios	
-   * 	
-   * @return javax.swing.JDialog	
-   */
-  public gUsuarios() {
-	  
-  }
+
   public JDialog getDAbmUsuarios() {
     if (dAbmUsuarios == null) {
       dAbmUsuarios = new JDialog();
       dAbmUsuarios.setSize(350, 300);
       dAbmUsuarios.setContentPane(getPAbmUsuarios());
       dAbmUsuarios.setTitle("ABM Usuarios");
-      
-      
     }
     return dAbmUsuarios;
   }
@@ -97,11 +88,10 @@ public class gUsuarios extends JFrame {
       pAbmUsuarios.add(lClave1);
       pAbmUsuarios.add(lClave2);
       pAbmUsuarios.add(lGrupo);
-      pAbmUsuarios.add(getLUsuarios());
+      pAbmUsuarios.add(getPUsuarios());
       pAbmUsuarios.add(getTBuscar());
       pAbmUsuarios.add(getBBuscar());
-      //pAbmUsuarios.add(barra);
-      pAbmUsuarios.add(getLUsuarios());
+      
     }
     return pAbmUsuarios;
   }
@@ -205,26 +195,18 @@ public class gUsuarios extends JFrame {
    * 	
    * @return javax.swing.JList	
    */
-  private JList getLUsuarios() {
+  private JScrollPane getPUsuarios() {
+    listaUsuarios = new DefaultListModel();
+    JList lUsuarios = new JList(listaUsuarios);
+    lUsuarios.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+ 	  if (pUsuarios == null) {
+		  pUsuarios = new JScrollPane(lUsuarios);		  
+      pUsuarios.setBounds(new Rectangle(230, 40, 100, 160));
       for (Usuario u : cUsuario.getUsuarios()) {
-        listaUsuarios.addElement(u);  
-      }
-      
-      JList lUsuarios = new JList(listaUsuarios);
-      barra = new JScrollPane(lUsuarios,
-          JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-          JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-      lUsuarios.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-      //lUsuarios.setBounds(new Rectangle(230, 40, 160, 200));
-      //barra.setPreferredSize(new Dimension(80, 80));
-      barra.setBounds(new Rectangle(0, 0, 60, 10));
-      //barra.setMinimumSize(new Dimension(80, 80));
-      barra.getViewport().setView(lUsuarios);
-      getContentPane().add(barra, BorderLayout.CENTER);
-      
-      
-     
-    return lUsuarios;
+			  listaUsuarios.addElement(u);  
+		  }
+	  }
+	  return pUsuarios;
   }
   
   /**
@@ -235,8 +217,7 @@ public class gUsuarios extends JFrame {
   private JTextField getTBuscar() {
     if (tBuscar == null) {
       tBuscar = new JTextField();
-      tBuscar.setBounds(new Rectangle(230, 20, 80, 20));
-      
+      tBuscar.setBounds(new Rectangle(230, 20, 80, 20));      
     }
     return tBuscar;
   }
@@ -259,5 +240,4 @@ public class gUsuarios extends JFrame {
     }
     return bBuscar;
   }
-  
-}
+}  //  @jve:decl-index=0:visual-constraint="430,33"
