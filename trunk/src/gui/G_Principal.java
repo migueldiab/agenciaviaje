@@ -58,6 +58,9 @@ public class G_Principal {
   private JLabel aboutVersionLabel = null;
 
   private JDialog dUsuario = null; 
+  private JDialog dGrupo = null;
+  private JDialog dViaje = null;
+  private JDialog dFrecuencia = null;
   /**
    * This method initializes jFrame
    * 
@@ -155,7 +158,6 @@ public class G_Principal {
       usuariosMenuItem.setText("Usuarios");
       usuariosMenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-          
           if (dUsuario == null) {
             G_Usuarios guiUsuario = new G_Usuarios();
             dUsuario = guiUsuario.getDAbmUsuarios();
@@ -163,7 +165,7 @@ public class G_Principal {
             Point loc = getJFrame().getLocation();
             loc.translate(20, 20);
             dUsuario.setLocation(loc);
-            dUsuario.setBounds(10,10,350,300);
+            dUsuario.setBounds(10,10,380,300);
             dUsuario.setVisible(true);            
           }
           else {
@@ -181,7 +183,20 @@ public class G_Principal {
       gruposMenuItem.setText("Grupos");
       gruposMenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-          
+          if (dGrupo == null) {
+            G_Grupos guiGrupo = new G_Grupos();
+            dGrupo = guiGrupo.getDAbmGrupos();
+            dGrupo.pack();
+            Point loc = getJFrame().getLocation();
+            loc.translate(20, 20);
+            dGrupo.setLocation(loc);
+            dGrupo.setBounds(10,10,380,300);
+            dGrupo.setVisible(true);            
+          }
+          else {
+            dGrupo.setVisible(true);
+          }
+
         }
       });
     }
@@ -242,7 +257,19 @@ public class G_Principal {
       viajesMenuItem.setText("Viajes");
       viajesMenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-          
+          if (dViaje == null) {
+            G_Viajes guiViaje = new G_Viajes();
+            dViaje = guiViaje.getDAbmViajes();
+            dViaje.pack();
+            Point loc = getJFrame().getLocation();
+            loc.translate(20, 20);
+            dViaje.setLocation(loc);
+            dViaje.setBounds(10,10,700,500);
+            dViaje.setVisible(true);            
+          }
+          else {
+            dViaje.setVisible(true);
+          }          
         }
       });
     }
@@ -254,7 +281,19 @@ public class G_Principal {
       frecuenciasMenuItem.setText("Frecuencias");
       frecuenciasMenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-          
+          if (dFrecuencia == null) {
+            G_Frecuencias guiFrecuencia = new G_Frecuencias();
+            dFrecuencia = guiFrecuencia.getDAbmFrecuencias();
+            dFrecuencia.pack();
+            Point loc = getJFrame().getLocation();
+            loc.translate(20, 20);
+            dFrecuencia.setLocation(loc);
+            dFrecuencia.setBounds(10,10,700,500);
+            dFrecuencia.setVisible(true);            
+          }
+          else {
+            dFrecuencia.setVisible(true);
+          }                    
         }
       });
     }
