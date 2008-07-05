@@ -18,7 +18,7 @@ import javax.swing.JFrame;
 import javax.swing.JDialog;
 import javax.swing.SwingUtilities;
 
-public class Principal {
+public class G_Principal {
 
   private JFrame jFrame = null;  //  @jve:decl-index=0:visual-constraint="10,10"
 
@@ -157,7 +157,7 @@ public class Principal {
         public void actionPerformed(ActionEvent e) {
           
           if (dUsuario == null) {
-            gUsuarios guiUsuario = new gUsuarios();
+            G_Usuarios guiUsuario = new G_Usuarios();
             dUsuario = guiUsuario.getDAbmUsuarios();
             dUsuario.pack();
             Point loc = getJFrame().getLocation();
@@ -502,7 +502,7 @@ public class Principal {
   public static void cargar() {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        Principal application = new Principal();
+        G_Principal application = new G_Principal();
         application.getJFrame().setVisible(true);
       }
     });
