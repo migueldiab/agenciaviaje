@@ -5,11 +5,11 @@ import global.Usuario;
 import java.util.ArrayList;
 
 
-public class pUsuarios {
+public class P_Usuarios {
   private static ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
   
   public static boolean login(String usuario, char[] clave) {
-    Usuario miUsuario = pUsuarios.obtenerPorNombre(usuario);
+    Usuario miUsuario = P_Usuarios.getUsuarioPorNombre(usuario);
     String pass = new String(clave);
     if (miUsuario.getClave().equals(pass))
       return true;
@@ -30,15 +30,15 @@ public class pUsuarios {
     return null;
   }
   */
-  private static Usuario obtenerPorNombre(String nombre) {
-    for (Usuario u : pUsuarios.usuarios) {
+  public static Usuario getUsuarioPorNombre(String nombre) {
+    for (Usuario u : P_Usuarios.usuarios) {
       if (u.getNombre().equals(nombre))
         return u;
     }
     return null;
   }
   public static ArrayList<Usuario> getUsuarios() {
-    return pUsuarios.usuarios;
+    return P_Usuarios.usuarios;
   }
   
 }

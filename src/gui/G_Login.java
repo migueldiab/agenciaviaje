@@ -12,11 +12,10 @@ import javax.swing.JLabel;
 
 import sistema.Inicio;
 
-import controlador.cUsuario;
 import java.awt.Color;
 
 
-public class Login extends JFrame {
+public class G_Login extends JFrame {
 
   private static final long serialVersionUID = 1L;
 
@@ -37,10 +36,10 @@ public class Login extends JFrame {
   /**
    * This is the default constructor
    */
-  public Login() {
+  public G_Login() {
     super();
     initialize();
-    Principal.cargar(); 
+    G_Principal.cargar(); 
   }
 
   /**
@@ -123,8 +122,8 @@ public class Login extends JFrame {
       bLogin.setText("Login");
       bLogin.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent e) {
-          if (cUsuario.login(tUsuario.getText(), tClave.getPassword())) {
-            Principal.cargar();            
+          if (Interfaz.login(tUsuario.getText(), tClave.getPassword())) {
+            G_Principal.cargar();            
             lError.setText("");
             Inicio.ventana.setVisible(false);
           }

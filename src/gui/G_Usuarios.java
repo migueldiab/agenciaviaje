@@ -1,5 +1,6 @@
 package gui;
 
+import global.Grupo;
 import global.Usuario;
 
 import javax.swing.JDialog;
@@ -21,13 +22,12 @@ import javax.swing.JComboBox;
 import javax.swing.JList;
 import javax.swing.ListSelectionModel;
 
-import controlador.cUsuario;
 
 
 
-public class gUsuarios {
+public class G_Usuarios {
 
-  private JDialog dAbmUsuarios = null;  //  @jve:decl-index=0:visual-constraint="75,34"
+  private JDialog dAbmUsuarios = null;  //  @jve:decl-index=0:visual-constraint="37,0"
   private JPanel pAbmUsuarios = null;
   private JLabel lNombre = null;
   private JTextField tNombre = null;
@@ -49,7 +49,7 @@ public class gUsuarios {
   public JDialog getDAbmUsuarios() {
     if (dAbmUsuarios == null) {
       dAbmUsuarios = new JDialog();
-      dAbmUsuarios.setSize(350, 300);
+      dAbmUsuarios.setBounds(new Rectangle(0, 0, 350, 270));
       dAbmUsuarios.setContentPane(getPAbmUsuarios());
       dAbmUsuarios.setTitle("ABM Usuarios");
     }
@@ -117,8 +117,13 @@ public class gUsuarios {
   private JButton getBAceptar() {
     if (bAceptar == null) {
       bAceptar = new JButton();
-      bAceptar.setBounds(new Rectangle(10, 230, 100, 30));
+      bAceptar.setBounds(new Rectangle(10, 200, 100, 30));
       bAceptar.setText("Aceptar");
+      bAceptar.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+          guardarUsuario();
+        }
+      });
     }
     return bAceptar;
   }
@@ -131,7 +136,7 @@ public class gUsuarios {
   private JButton getBCancelar() {
     if (bCancelar == null) {
       bCancelar = new JButton();
-      bCancelar.setBounds(new Rectangle(120, 230, 100, 30));
+      bCancelar.setBounds(new Rectangle(120, 200, 100, 30));
       bCancelar.setText("Cancelar");
     }
     return bCancelar;
@@ -145,7 +150,7 @@ public class gUsuarios {
   private JButton getBEliminar() {
     if (bEliminar == null) {
       bEliminar = new JButton();
-      bEliminar.setBounds(new Rectangle(230, 230, 100, 30));
+      bEliminar.setBounds(new Rectangle(230, 200, 100, 30));
       bEliminar.setText("Eliminar");
     }
     return bEliminar;
@@ -186,6 +191,9 @@ public class gUsuarios {
     if (cGrupo == null) {
       cGrupo = new JComboBox();
       cGrupo.setBounds(new Rectangle(100, 95, 120, 20));
+      for (Grupo g : Interfaz.getGrupos()) {
+        cGrupo.addItem(g);        
+      }
     }
     return cGrupo;
   }
@@ -197,12 +205,17 @@ public class gUsuarios {
    */
   private JScrollPane getPUsuarios() {
     listaUsuarios = new DefaultListModel();
-    JList lUsuarios = new JList(listaUsuarios);
+    lUsuarios = new JList(listaUsuarios);
     lUsuarios.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    lUsuarios.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+          public void valueChanged(javax.swing.event.ListSelectionEvent e) {
+            cargarUsuario();
+          }
+        });
  	  if (pUsuarios == null) {
 		  pUsuarios = new JScrollPane(lUsuarios);		  
-      pUsuarios.setBounds(new Rectangle(230, 40, 100, 160));
-      for (Usuario u : cUsuario.getUsuarios()) {
+      pUsuarios.setBounds(new Rectangle(230, 40, 100, 120));
+      for (Usuario u : Interfaz.getUsuarios()) {
 			  listaUsuarios.addElement(u);  
 		  }
 	  }
@@ -234,10 +247,25 @@ public class gUsuarios {
       bBuscar.setText("...");
       bBuscar.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent e) {
-          System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+          buscarUsuario();
         }
       });
     }
     return bBuscar;
+  }
+  
+  private void cargarUsuario() {
+    
+    Usuario u = (Usuario) lUsuarios.getSelectedValue();    
+    tNombre.setText(u.getNombre());
+    tClave1.setText(u.getClave());
+    tClave2.setText(u.getClave());
+    cGrupo.setSelectedItem(u.getGrupo());
+  }
+  private void buscarUsuario() {
+    tNombre.setText("Test2");
+  }
+  private void guardarUsuario() {
+    tNombre.setText("Test2");
   }
 }  //  @jve:decl-index=0:visual-constraint="430,33"
