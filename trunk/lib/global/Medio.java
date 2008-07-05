@@ -1,6 +1,6 @@
 package global;
 
-public class MedioTransporte {
+public class Medio {
   private int    id = 0;
   private String nombre = "";
   private String codigo = "";
@@ -39,5 +39,21 @@ public class MedioTransporte {
    */
   public void setNombre(String nombre) {
     this.nombre = nombre;
+  }
+  /* (non-Javadoc)
+   * @see java.lang.Object#equals(java.lang.Object)
+   */
+  @Override
+  public boolean equals(Object arg0) {
+    // TODO Auto-generated method stub
+    return super.equals(arg0);
+  }
+  /* (non-Javadoc)
+   * @see java.lang.Object#toString()
+   */
+  @Override
+  public String toString() {
+    // TODO Auto-generated method stub
+    return this.getCodigo();
   }
 }

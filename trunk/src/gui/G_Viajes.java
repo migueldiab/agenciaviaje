@@ -2,6 +2,10 @@ package gui;
 
 import viajes.Viaje;
 
+import global.Ciudad;
+import global.Grupo;
+import global.Medio;
+
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 
@@ -22,7 +26,7 @@ import javax.swing.JTable;
 
 public class G_Viajes {
 
-  private JDialog dAbmViajes = null;  //  @jve:decl-index=0:visual-constraint="10,179"
+  private JDialog dAbmViajes = null;  //  @jve:decl-index=0:visual-constraint="1,-11"
   private JPanel pAbmViajes = null;
   private JLabel lNombre = null;
   private JTextField tNombre = null;
@@ -34,8 +38,8 @@ public class G_Viajes {
   private JLabel lOrigen = null;
   private JLabel lDestino = null;
   private JScrollPane pViajes = null;
-  private JList lViajes = null;  
-  private DefaultListModel listaViajes = null;  //  @jve:decl-index=0:visual-constraint="538,137"
+  private JList lViajes = null;  //  @jve:decl-index=0:visual-constraint="628,-3"
+  private DefaultListModel listaViajes = null;  //  @jve:decl-index=0:visual-constraint="603,134"
   private JTextField tBuscar = null;
   private JButton bBuscar = null;
   private JButton bNuevo = null;
@@ -129,6 +133,7 @@ public class G_Viajes {
       pAbmViajes.add(getBMas(), null);
       pAbmViajes.add(getTTramos(), null);
       pAbmViajes.add(getSTramos(), null);
+      cargarListas();
       
     }
     return pAbmViajes;
@@ -247,7 +252,6 @@ public class G_Viajes {
     if (pViajes == null) {
       pViajes = new JScrollPane(lViajes);     
       pViajes.setBounds(new Rectangle(470, 40, 100, 120));
-      cargarListas();
     }
     return pViajes;
   }
@@ -321,6 +325,19 @@ public class G_Viajes {
     for (Viaje u : Interfaz.getViajes()) {
       listaViajes.addElement(u);  
     }
+    cOrigen.removeAllItems();
+    for (Ciudad c : Interfaz.getCiudades()) {
+      cOrigen.addItem(c);        
+    }   
+    cDestino.removeAllItems();
+    for (Ciudad c : Interfaz.getCiudades()) {
+      cDestino.addItem(c);        
+    }
+    cMedio.removeAllItems();
+    for (Medio m : Interfaz.getMedios()) {
+      cMedio.addItem(m);        
+    }   
+    
      
   }
 
@@ -355,7 +372,6 @@ public class G_Viajes {
     tId.setText("");
     tNombre.setText("");
     tApellido.setText("");
-    
     
     tId.requestFocus();
   }
@@ -433,6 +449,11 @@ public class G_Viajes {
       bMas = new JButton();
       bMas.setBounds(new Rectangle(410, 95, 45, 20));
       bMas.setText("+");
+      bMas.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent e) {
+          guardarTramo();
+        }
+      });
     }
     return bMas;
   }
@@ -462,4 +483,7 @@ public class G_Viajes {
     }
     return tTramos;
   }
-}  
+  public void guardarTramo() {
+    
+  }
+}  //  @jve:decl-index=0:visual-constraint="603,1"  
