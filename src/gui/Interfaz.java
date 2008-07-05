@@ -1,17 +1,12 @@
 package gui;
 
-import global.Grupo;
-import global.Usuario;
+import global.*;
 
 import java.util.ArrayList;
 
-import viajes.Frecuencia;
-import viajes.Viaje;
+import viajes.*;
 
-import modelo.P_Frecuencias;
-import modelo.P_Grupos;
-import modelo.P_Usuarios;
-import modelo.P_Viajes;
+import modelo.*;
 
 public class Interfaz {
   /*
@@ -93,4 +88,40 @@ public class Interfaz {
     return P_Frecuencias.eliminar(u);
   }
   
+  /*
+   *  Ciudades
+   */
+  public static ArrayList<Ciudad> getCiudades() {
+    return P_Ciudades.getCiudades();
+  }
+  public static Ciudad getCiudadPorNombre(String s) {
+    return P_Ciudades.getCiudadPorNombre(s);
+  }  
+  public static Ciudad getCiudadPorId(int id) {
+    return P_Ciudades.getCiudadPorId(id);
+  }  
+  public static boolean agregarCiudad(Ciudad u) {
+    return P_Ciudades.guardar(u);
+  }
+  public static boolean eliminarCiudad(Ciudad u) {
+    return P_Ciudades.eliminar(u);
+  }  
+  /*
+   *  Medios
+   */
+  public static ArrayList<Medio> getMedios() {
+    return P_Medios.getMedios();
+  }
+  public static Medio getMedioPorNombre(String s) {
+    return P_Medios.getMedioPorNombre(s);
+  }  
+  public static Medio getMedioPorId(int id) {
+    return P_Medios.getMedioPorId(id);
+  }  
+  public static boolean agregarMedio(Medio u) {
+    return P_Medios.guardar(u);
+  }
+  public static boolean eliminarMedio(Medio u) {
+    return P_Medios.eliminar(u);
+  }    
 }

@@ -1,14 +1,14 @@
 package viajes;
 
 import global.Ciudad;
-import global.MedioTransporte;
+import global.Medio;
 
 public class Tramo {
   private int    id = 0;
   private Ciudad origen = null;
   private Ciudad destino = null;  
   private Viaje  viaje = null;
-  private MedioTransporte  medio = null;
+  private Medio  medio = null;
   private int    duracion = 0;
   private int    tramo = 0;
   /**
@@ -50,13 +50,13 @@ public class Tramo {
   /**
    * @return the medio
    */
-  public MedioTransporte getMedio() {
+  public Medio getMedio() {
     return medio;
   }
   /**
    * @param medio the medio to set
    */
-  public void setMedio(MedioTransporte medio) {
+  public void setMedio(Medio medio) {
     this.medio = medio;
   }
   /**

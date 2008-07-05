@@ -110,6 +110,7 @@ public class G_Usuarios {
       pAbmUsuarios.add(lId, null);
       pAbmUsuarios.add(getTId(), null);
       pAbmUsuarios.add(lInfo, null);
+      cargarListas();
       
     }
     return pAbmUsuarios;
@@ -254,7 +255,6 @@ public class G_Usuarios {
  	  if (pUsuarios == null) {
 		  pUsuarios = new JScrollPane(lUsuarios);		  
       pUsuarios.setBounds(new Rectangle(260, 40, 100, 120));
-      cargarListas();
 	  }
 	  return pUsuarios;
   }

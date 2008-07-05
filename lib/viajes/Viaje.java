@@ -3,6 +3,16 @@ package viajes;
 import global.Ciudad;
 
 public class Viaje {
+  @Override
+  public boolean equals(Object arg0) {
+    // TODO Auto-generated method stub
+    return super.equals(arg0);
+  }
+  @Override
+  public String toString() {
+    // TODO Auto-generated method stub
+    return this.getNombre();
+  }
   private int    id = 0;
   private String nombre = "";
   private double precio = 0;

@@ -4,8 +4,7 @@
 package sistema;
 
 import modelo.P_SisRes;
-import global.Grupo;
-import global.Usuario;
+import global.*;
 import gui.G_Login;
 
 /**
@@ -49,5 +48,26 @@ public class Inicio {
     unUsuario.setId("mike");
     SisRes.Usuarios.guardar(unUsuario);
 
+    Ciudad unCiudad = new Ciudad();
+    unCiudad.setNombre("Montevideo");
+    unCiudad.setCodigo("MVD");
+    unCiudad.setId(1);
+    SisRes.Ciudades.guardar(unCiudad);
+    unCiudad = new Ciudad();
+    unCiudad.setNombre("Colonia");
+    unCiudad.setCodigo("COL");
+    unCiudad.setId(2);
+    SisRes.Ciudades.guardar(unCiudad);
+    unCiudad = new Ciudad();
+    unCiudad.setNombre("Buenos Aires");
+    unCiudad.setCodigo("BUE");
+    unCiudad.setId(3);
+    SisRes.Ciudades.guardar(unCiudad);
+
+    Medio unMedio = new Medio();
+    unMedio.setNombre("Bus");
+    unMedio.setCodigo("Bus");
+    unMedio.setId(1);
+    SisRes.Medios.guardar(unMedio);
   }
 }
