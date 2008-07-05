@@ -33,21 +33,21 @@ public class Inicio {
 
   private static void cargarDatosInicio() {
     Grupo unGrupo = new Grupo();
-    unGrupo.setId(1);
+    unGrupo.setId(2);
     unGrupo.setNombre("Otro");
-    SisRes.Grupos.agregar(unGrupo);
+    SisRes.Grupos.guardar(unGrupo);
     
     unGrupo = new Grupo();
-    unGrupo.setId(0);
+    unGrupo.setId(1);
     unGrupo.setNombre("Administrador");
-    SisRes.Grupos.agregar(unGrupo);
+    SisRes.Grupos.guardar(unGrupo);
 
     Usuario unUsuario = new Usuario();
-    unUsuario.setNombre("Mike");
+    unUsuario.setNombre("Miguel");
     unUsuario.setClave("abc123");
     unUsuario.setGrupo(unGrupo);
-    unUsuario.setId(1);
-    SisRes.Usuarios.agregar(unUsuario);
+    unUsuario.setId("mike");
+    SisRes.Usuarios.guardar(unUsuario);
 
   }
 }

@@ -6,9 +6,17 @@ public class Usuario {
    * @see java.lang.Object#equals(java.lang.Object)
    */
   @Override
-  public boolean equals(Object arg0) {
-    // TODO Auto-generated method stub
-    return super.equals(arg0);
+  public boolean equals(Object obj) {
+    if(this == obj)
+      return true;
+    if((obj == null) || (obj.getClass() != this.getClass()))
+      return false;
+    Usuario u = (Usuario) obj;
+    if (this.getId().equals(u.getId())) {
+      return true;
+    }    
+    return false;
+      
   }
   /* (non-Javadoc)
    * @see java.lang.Object#toString()
@@ -16,11 +24,12 @@ public class Usuario {
   @Override
   public String toString() {
     // TODO Auto-generated method stub
-    return this.getNombre();
+    return this.getId();
   }
-  private int    id = 0;
-  private String nombre = "";
-  private String clave = "";
+  private String id = null;
+  private String nombre = null;
+  private String apellido = null;
+  private String clave = null;
   private Grupo grupo = null;
   /**
    * @return the grupo
@@ -37,13 +46,13 @@ public class Usuario {
   /**
    * @return the id
    */
-  public int getId() {
+  public String getId() {
     return id;
   }
   /**
    * @param id the id to set
    */
-  public void setId(int id) {
+  public void setId(String id) {
     this.id = id;
   }
   /**
@@ -70,4 +79,11 @@ public class Usuario {
   public void setClave(String clave) {
     this.clave = clave;
   }
+  public String getApellido() {
+    return apellido;
+  }
+  public void setApellido(String apellido) {
+    this.apellido = apellido;
+  }
+
 }
