@@ -31,14 +31,6 @@ public class P_Viajes {
     }      
   }
   
-  public static Viaje getViajePorId(int id) {
-    for (Viaje u : P_Viajes.viajes) {
-      if (u.getId()==id)
-        return u;
-    }
-    return null;
-  }
-  
   public static Viaje getViajePorNombre(String nombre) {
     for (Viaje u : P_Viajes.viajes) {
       if (u.getNombre().equals(nombre))

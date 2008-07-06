@@ -1,7 +1,7 @@
 package global;
 
 public class Medio {
-  private int    id = 0;
+  private int    id = -1;
   private String nombre = "";
   
   /**

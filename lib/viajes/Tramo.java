@@ -4,10 +4,8 @@ import global.Ciudad;
 import global.Medio;
 
 public class Tramo {
-  private int    id = 0;
   private Ciudad origen = null;
   private Ciudad destino = null;  
-  private Viaje  viaje = null;
   private Medio  medio = null;
   private int    duracion = 0;
   private int    tramo = 0;
@@ -34,18 +32,6 @@ public class Tramo {
    */
   public void setDuracion(int duracion) {
     this.duracion = duracion;
-  }
-  /**
-   * @return the id
-   */
-  public int getId() {
-    return id;
-  }
-  /**
-   * @param id the id to set
-   */
-  public void setId(int id) {
-    this.id = id;
   }
   /**
    * @return the medio
@@ -83,16 +69,5 @@ public class Tramo {
   public void setTramo(int tramo) {
     this.tramo = tramo;
   }
-  /**
-   * @return the viaje
-   */
-  public Viaje getViaje() {
-    return viaje;
-  }
-  /**
-   * @param viaje the viaje to set
-   */
-  public void setViaje(Viaje viaje) {
-    this.viaje = viaje;
-  }
+
 }
