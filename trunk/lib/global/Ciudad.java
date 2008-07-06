@@ -41,11 +41,17 @@ public class Ciudad {
     this.nombre = nombre;
   }
   @Override
-  public boolean equals(Object arg0) {
-    // TODO Auto-generated method stub
-    return super.equals(arg0);
+  public boolean equals(Object obj) {
+    if(this == obj)
+      return true;
+    if((obj == null) || (obj.getClass() != this.getClass()))
+      return false;
+    Ciudad c = (Ciudad) obj;
+    if (this.getId()==(c.getId())) {
+      return true;
+    }    
+    return false;
   }
-  
   @Override
   public String toString() {
     // TODO Auto-generated method stub
