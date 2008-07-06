@@ -230,7 +230,7 @@ public class G_Principal {
   private JMenuItem getDescuentosMenuItem() {
     if (descuentosMenuItem == null) {
       descuentosMenuItem = new JMenuItem();
-      descuentosMenuItem.setText("Usuarios");
+      descuentosMenuItem.setText("Descuentos");
       descuentosMenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
           
