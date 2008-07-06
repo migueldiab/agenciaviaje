@@ -94,11 +94,8 @@ public class Interfaz {
   public static ArrayList<Ciudad> getCiudades() {
     return P_Ciudades.getCiudades();
   }
-  public static Ciudad getCiudadPorNombre(String s) {
-    return P_Ciudades.getCiudadPorNombre(s);
-  }  
-  public static Ciudad getCiudadPorId(int id) {
-    return P_Ciudades.getCiudadPorId(id);
+  public static Ciudad getCiudadPorCodigo(String s) {
+    return P_Ciudades.getCiudadPorCodigo(s);
   }  
   public static boolean agregarCiudad(Ciudad u) {
     return P_Ciudades.guardar(u);

@@ -30,9 +30,9 @@ public class P_Ciudades {
     }      
   }
   
-  public static Ciudad getCiudadPorId(int id) {
+  public static Ciudad getCiudadPorCodigo(String codigo) {
     for (Ciudad g : P_Ciudades.Ciudades) {
-      if (g.getId()==id)
+      if (g.getCodigo()==codigo)
         return g;
     }
     return null;
