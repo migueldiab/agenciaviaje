@@ -5,6 +5,7 @@ package sistema;
 
 import modelo.P_SisRes;
 import global.*;
+import viajes.*;
 import gui.G_Login;
 
 /**
@@ -66,8 +67,25 @@ public class Inicio {
 
     Medio unMedio = new Medio();
     unMedio.setNombre("Bus");
-    unMedio.setCodigo("Bus");
     unMedio.setId(1);
     SisRes.Medios.guardar(unMedio);
+
+    Viaje unViaje = new Viaje();
+    unViaje.setNombre("MiViaje");
+    unViaje.setOrigen(unCiudad);
+    unViaje.setDestino(unCiudad);
+    unViaje.setCapacidad(10);
+    unViaje.setPrecio(120.50);
+        
+    Tramo unTramo = new Tramo();
+    unTramo.setOrigen(unCiudad);
+    unTramo.setDestino(unCiudad);
+    unTramo.setMedio(unMedio);
+    unTramo.setDuracion(10);
+    unTramo.setTramo(0);
+    unViaje.addTramo(unTramo);
+    
+    SisRes.Viajes.guardar(unViaje);
+
   }
 }

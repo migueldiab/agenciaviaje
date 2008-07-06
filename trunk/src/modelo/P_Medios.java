@@ -41,7 +41,7 @@ public class P_Medios {
   
   public static Medio getMedioPorNombre(String nombre) {
     for (Medio u : P_Medios.Medios) {
-      //if (u.getNombre().equals(nombre))
+      if (u.getNombre().equals(nombre))
         return u;
     }
     return null;

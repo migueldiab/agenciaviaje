@@ -37,8 +37,8 @@ public class G_Medios {
   private JButton bBuscar = null;
   private JButton bNuevo = null;
   private JLabel lInfo = null;
-  private JLabel lCodigo = null;
-  private JTextField tCodigo = null;
+  private JLabel lId = null;
+  private JTextField tId = null;
   public JDialog getDAbmMedios() {
     if (dAbmMedios == null) {
       dAbmMedios = new JDialog();
@@ -56,9 +56,9 @@ public class G_Medios {
    */
   private JPanel getPAbmMedios() {
     if (pAbmMedios == null) {
-      lCodigo = new JLabel();
-      lCodigo.setBounds(new Rectangle(10, 20, 90, 20));
-      lCodigo.setText("Codigo");
+      lId = new JLabel();
+      lId.setBounds(new Rectangle(10, 20, 90, 20));
+      lId.setText("Id");
       lInfo = new JLabel();
       lInfo.setBounds(new Rectangle(0, 240, 370, 30));
       lInfo.setHorizontalAlignment(SwingConstants.CENTER);
@@ -80,8 +80,8 @@ public class G_Medios {
       pAbmMedios.add(getBBuscar());
       pAbmMedios.add(getBNuevo(), null);
       pAbmMedios.add(lInfo, null);
-      pAbmMedios.add(lCodigo, null);
-      pAbmMedios.add(getTCodigo(), null);
+      pAbmMedios.add(lId, null);
+      pAbmMedios.add(getTId(), null);
       cargarListas();
       
     }
@@ -228,31 +228,32 @@ public class G_Medios {
     
     Medio u = (Medio) lMedios.getSelectedValue();    
     tNombre.setText(u.getNombre());
-    tCodigo.setText(u.getCodigo());
+    tId.setText(Integer.toString(u.getId()));
   }
   private void buscarMedio() {
     tNombre.setText("Test2");
   }
   private void guardarMedio() {
-    Medio unMedio = Interfaz.getMedioPorCodigo(tCodigo.getText());    
+    Medio unMedio = Interfaz.getMedioPorId(Integer.parseInt(tId.getText()));    
     if (unMedio == null)
       unMedio = new Medio();
     
     if ((unMedio.getId()==-1) || (JOptionPane.showConfirmDialog(
-        null,"Desea sobrescribir el Medio "+tCodigo.getText()+"?",
+        null,"Desea sobrescribir el Medio "+tId.getText()+"?",
         "Confirma guardar?",
         JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION)
       )
     {
-      if (tCodigo.getText()!="")    
+      if (tId.getText()!="")    
       {      
         unMedio.setNombre(tNombre.getText());
-        unMedio.setCodigo(tCodigo.getText());
+        unMedio.setId(Integer.parseInt(tId.getText()));
         Interfaz.agregarMedio(unMedio);
         lInfo.setForeground(new Color(65, 190, 79));
         lInfo.setText("Medio " + tNombre.getText() + " guardado");
-        cargarListas();
+        
         limpiarCampos();
+        cargarListas();
       }
       else {
         lInfo.setForeground(new Color(190, 65, 79));
@@ -273,7 +274,9 @@ public class G_Medios {
       bNuevo.setText("Nuevo");
       bNuevo.addActionListener(new java.awt.event.ActionListener() {   
         public void actionPerformed(java.awt.event.ActionEvent e) {    
+          cargarListas();
           limpiarCampos();
+          
         }
       
       });
@@ -291,8 +294,8 @@ public class G_Medios {
     lMedios.clearSelection();
     
     tNombre.setText("");
-    tCodigo.setText("");
-    tCodigo.requestFocus();
+    tId.setText("");
+    tId.requestFocus();
   }
   private void eliminarMedio(Medio u) {
     if (JOptionPane.showConfirmDialog(
@@ -307,16 +310,16 @@ public class G_Medios {
   }
 
   /**
-   * This method initializes tCodigo  
+   * This method initializes tId  
    *  
    * @return javax.swing.JTextField 
    */
-  private JTextField getTCodigo() {
-    if (tCodigo == null) {
-      tCodigo = new JTextField();
-      tCodigo.setBounds(new Rectangle(100, 20, 60, 20));
+  private JTextField getTId() {
+    if (tId == null) {
+      tId = new JTextField();
+      tId.setBounds(new Rectangle(100, 20, 60, 20));
     }
-    return tCodigo;
+    return tId;
   }
 }  
 

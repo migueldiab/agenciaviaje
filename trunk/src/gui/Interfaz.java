@@ -11,8 +11,7 @@ import modelo.*;
 public class Interfaz {
   /*
    *  Usuarios
-   */
-  
+   */  
   public static boolean login(String usuario, char[] clave) {
     return P_Usuarios.login(usuario, clave);
   }
@@ -58,9 +57,6 @@ public class Interfaz {
   }
   public static Viaje getViajePorNombre(String s) {
     return P_Viajes.getViajePorNombre(s);
-  }  
-  public static Viaje getViajePorId(int id) {
-    return P_Viajes.getViajePorId(id);
   }  
   public static boolean agregarViaje(Viaje u) {
     return P_Viajes.guardar(u);
@@ -120,5 +116,22 @@ public class Interfaz {
   }
   public static boolean eliminarMedio(Medio u) {
     return P_Medios.eliminar(u);
+  }    
+  /*
+   *  Tramos
+   */
+  public static ArrayList<Tramo> getTramos() {
+    return P_Tramos.getTramos();
+  }
+  /*
+  public static Tramo getTramoPorNombre(String s) {
+    return P_Tramos.getTramoPorNombre(s);
+  } 
+  */ 
+  public static boolean agregarTramo(Tramo u) {
+    return P_Tramos.guardar(u);
+  }
+  public static boolean eliminarTramo(Tramo u) {
+    return P_Tramos.eliminar(u);
   }    
 }

@@ -62,6 +62,8 @@ public class G_Principal {
   private JDialog dViaje = null;
   private JDialog dFrecuencia = null;
   private JDialog dCiudad = null;
+  private JDialog dMedio = null;
+  
   /**
    * This method initializes jFrame
    * 
@@ -306,7 +308,19 @@ public class G_Principal {
       mediosMenuItem.setText("Medios");
       mediosMenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-          
+          if (dMedio == null) {
+            G_Medios guiMedio = new G_Medios();
+            dMedio = guiMedio.getDAbmMedios();
+            dMedio.pack();
+            Point loc = getJFrame().getLocation();
+            loc.translate(20, 20);
+            dMedio.setLocation(loc);
+            dMedio.setBounds(10,10,700,500);
+            dMedio.setVisible(true);            
+          }
+          else {
+            dMedio.setVisible(true);
+          }                 
         }
       });
     }
