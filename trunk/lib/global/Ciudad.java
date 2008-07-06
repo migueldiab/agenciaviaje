@@ -47,7 +47,7 @@ public class Ciudad {
     if((obj == null) || (obj.getClass() != this.getClass()))
       return false;
     Ciudad c = (Ciudad) obj;
-    if (this.getId()==(c.getId())) {
+    if (this.getCodigo().equals(c.getCodigo())) {
       return true;
     }    
     return false;
