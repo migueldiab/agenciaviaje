@@ -3,19 +3,7 @@ package global;
 public class Medio {
   private int    id = 0;
   private String nombre = "";
-  private String codigo = "";
-  /**
-   * @return the codigo
-   */
-  public String getCodigo() {
-    return codigo;
-  }
-  /**
-   * @param codigo the codigo to set
-   */
-  public void setCodigo(String codigo) {
-    this.codigo = codigo;
-  }
+  
   /**
    * @return the id
    */
@@ -44,9 +32,16 @@ public class Medio {
    * @see java.lang.Object#equals(java.lang.Object)
    */
   @Override
-  public boolean equals(Object arg0) {
-    // TODO Auto-generated method stub
-    return super.equals(arg0);
+  public boolean equals(Object obj) {
+    if(this == obj)
+      return true;
+    if((obj == null) || (obj.getClass() != this.getClass()))
+      return false;
+    Medio m = (Medio) obj;
+    if (this.getId()==(m.getId())) {
+      return true;
+    }    
+    return false;
   }
   /* (non-Javadoc)
    * @see java.lang.Object#toString()
@@ -54,6 +49,6 @@ public class Medio {
   @Override
   public String toString() {
     // TODO Auto-generated method stub
-    return this.getCodigo();
+    return this.getNombre();
   }
 }
