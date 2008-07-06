@@ -61,6 +61,7 @@ public class G_Principal {
   private JDialog dGrupo = null;
   private JDialog dViaje = null;
   private JDialog dFrecuencia = null;
+  private JDialog dCiudad = null;
   /**
    * This method initializes jFrame
    * 
@@ -317,7 +318,19 @@ public class G_Principal {
       ciudadesMenuItem.setText("Ciudades");
       ciudadesMenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-          
+          if (dCiudad == null) {
+            G_Ciudades guiCiudad = new G_Ciudades();
+            dCiudad = guiCiudad.getDAbmCiudades();
+            dCiudad.pack();
+            Point loc = getJFrame().getLocation();
+            loc.translate(20, 20);
+            dCiudad.setLocation(loc);
+            dCiudad.setBounds(10,10,380,300);
+            dCiudad.setVisible(true);            
+          }
+          else {
+            dCiudad.setVisible(true);
+          }          
         }
       });
     }
