@@ -3,10 +3,14 @@
  */
 package sistema;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import modelo.P_SisRes;
 import global.*;
+import utils.Fecha;
 import viajes.*;
 import gui.G_Login;
 
@@ -149,6 +153,9 @@ public class Inicio {
     unFrecuencia.setNombre("Diario");
     unFrecuencia.setDisponible(100);
     unFrecuencia.setViaje(unViaje);
+    ArrayList<Date> horas = new ArrayList<Date>();
+    horas.add(Fecha.parseHora("10:10"));
+    unFrecuencia.setHoras(horas);      
     SisRes.Frecuencias.guardar(unFrecuencia);
     
   }

@@ -1,5 +1,6 @@
 package gui;
 
+import utils.Fecha;
 import viajes.Tramo;
 import viajes.Frecuencia;
 import viajes.Viaje;
@@ -24,7 +25,9 @@ import javax.swing.JComboBox;
 import javax.swing.JList;
 import javax.swing.ListSelectionModel;
 import java.awt.Color;
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.swing.SwingConstants;
 import javax.swing.JTable;
@@ -255,11 +258,11 @@ public class G_Frecuencias {
       i++;
     }
     dTramos.setRowCount(0);
+    i = 0;
     for (Tramo t : f.getViaje().getTramos()) {      
-      dTramos.addRow(new Object[]{t.getOrigen(),t.getDestino(),t.getMedio(),t.getDuracion()});  
+      dTramos.addRow(new Object[]{t.getOrigen(),t.getDestino(),Fecha.toString(f.getHoras().get(i)),t.getDuracion()});
+      i++;
     }
-
-
   }
   private void buscarFrecuencia() {
     
@@ -280,24 +283,20 @@ public class G_Frecuencias {
         if (tFrecuencia.getText()!="" )    
         {
           unFrecuencia.setNombre(tFrecuencia.getText());          
-
-          
+          if (unFrecuencia.getDisponible()==-1)
+            unFrecuencia.setDisponible(((Viaje) cViaje.getSelectedItem()).getCapacidad());
+          unFrecuencia.setViaje((Viaje) cViaje.getSelectedItem());
           ArrayList<Boolean> dias = new ArrayList<Boolean>();
           for (int i = 0;i<7;i++) {
             dias.add(cDia[i].isSelected());          
           }
           unFrecuencia.setDias(dias);
             
-          ArrayList<Tramo> tramos = new ArrayList<Tramo>();
+          ArrayList<Date> horas = new ArrayList<Date>();
           for (int i = 0; i < dTramos.getRowCount(); i++) {
-            Tramo uTramo = new Tramo();
-            uTramo.setOrigen((Ciudad) dTramos.getValueAt(i, 0));
-            uTramo.setDestino((Ciudad) dTramos.getValueAt(i, 1));
-            uTramo.setMedio((Medio) dTramos.getValueAt(i, 2));
-            uTramo.setDuracion(Integer.parseInt(dTramos.getValueAt(i, 3).toString()));
-            uTramo.setTramo(i);
-            tramos.add(uTramo);
+            horas.add(Fecha.parseHora(dTramos.getValueAt(i, 2).toString()));
           }
+          unFrecuencia.setHoras(horas);
           //unFrecuencia.setTramos(tramos);
           
           if (Interfaz.agregarFrecuencia(unFrecuencia)) {
@@ -342,18 +341,19 @@ public class G_Frecuencias {
     }
     return bNuevo;
   }
+  private void cargarTramos() {
+    if (cViaje.getSelectedIndex()!=-1) {
+      dTramos.setRowCount(0);
+      for (Tramo t : ((Viaje) cViaje.getSelectedItem()).getTramos()) {      
+        dTramos.addRow(new Object[]{t.getOrigen(),t.getDestino(),"12:00",t.getDuracion()});  
+      }
+      
+    }
+  }
   private void cargarListas() {
     listaFrecuencias.clear();
     for (Frecuencia u : Interfaz.getFrecuencias()) {
       listaFrecuencias.addElement(u);  
-    }
-    cCiudad.removeAllItems();
-    for (Ciudad c : Interfaz.getCiudades()) {
-      cCiudad.addItem(c);        
-    }   
-    cMedio.removeAllItems();
-    for (Medio m : Interfaz.getMedios()) {
-      cMedio.addItem(m);        
     }
     cViaje.removeAllItems();
     for (Viaje v : Interfaz.getViajes()) {
@@ -368,6 +368,7 @@ public class G_Frecuencias {
     tFrecuencia.setText("");    
     dTramos.setRowCount(0);
     tFrecuencia.requestFocus();
+    cViaje.setSelectedIndex(-1);
     for (int i=0;i<7;i++) {
       cDia[i].setSelected(false);
     }
@@ -497,6 +498,11 @@ public class G_Frecuencias {
     if (cViaje == null) {
       cViaje = new JComboBox();
       cViaje.setBounds(new Rectangle(100, 45, 120, 20));
+      cViaje.addItemListener(new java.awt.event.ItemListener() {
+        public void itemStateChanged(java.awt.event.ItemEvent e) {
+          cargarTramos();
+        }
+      });
     }
     return cViaje;
   }

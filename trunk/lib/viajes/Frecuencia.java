@@ -1,13 +1,14 @@
 package viajes;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Frecuencia {
   private String nombre = "";
   private ArrayList<Boolean> dias = new ArrayList<Boolean>();
   private Viaje viaje = null;
-  private int    disponible = 0;
-  private ArrayList horas = new ArrayList();
+  private int    disponible = -1;
+  private ArrayList<Date> horas = new ArrayList<Date>();
   
   /**
    * @return the dias
@@ -39,10 +40,10 @@ public class Frecuencia {
   public void setNombre(String nombre) {
     this.nombre = nombre;
   }
-  public ArrayList getHoras() {
+  public ArrayList<Date> getHoras() {
     return horas;
   }
-  public void setHoras(ArrayList horas) {
+  public void setHoras(ArrayList<Date> horas) {
     this.horas = horas;
   }
   public Viaje getViaje() {
@@ -55,9 +56,17 @@ public class Frecuencia {
   
   
   @Override
-  public boolean equals(Object arg0) {
+  public boolean equals(Object obj) {
     // TODO Auto-generated method stub
-    return super.equals(arg0);
+    if(this == obj)
+      return true;
+    if((obj == null) || (obj.getClass() != this.getClass()))
+      return false;
+    Frecuencia u = (Frecuencia) obj;
+    if (this.getNombre().equals(u.getNombre())) {
+      return true;
+    }    
+    return false;
   }
   @Override
   public String toString() {
