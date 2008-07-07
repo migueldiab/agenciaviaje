@@ -56,7 +56,8 @@ public class G_Frecuencias {
   private JLabel lInfo = null;
   private JScrollPane sTramos = null;
   private JTable tTramos = null;
-  private DefaultTableModel dTramos = new DefaultTableModel();
+  private DefaultTableModel dTramos = new DefaultTableModel() {
+    public boolean isCellEditable(int row, int column) { return column==2; } };
   private JCheckBox[] cDia = new JCheckBox[7];
   private JComboBox cViaje = null;
   private JLabel lFrecuencia = null;
@@ -342,10 +343,10 @@ public class G_Frecuencias {
     return bNuevo;
   }
   private void cargarTramos() {
+    dTramos.setRowCount(0);
     if (cViaje.getSelectedIndex()!=-1) {
-      dTramos.setRowCount(0);
       for (Tramo t : ((Viaje) cViaje.getSelectedItem()).getTramos()) {      
-        dTramos.addRow(new Object[]{t.getOrigen(),t.getDestino(),"12:00",t.getDuracion()});  
+        dTramos.addRow(new Object[]{t.getOrigen(),t.getDestino(),null,t.getDuracion()});  
       }
       
     }
@@ -358,7 +359,9 @@ public class G_Frecuencias {
     cViaje.removeAllItems();
     for (Viaje v : Interfaz.getViajes()) {
       cViaje.addItem(v);        
-    }    
+    }
+    cViaje.setSelectedIndex(-1);
+    cargarTramos();
   }
   
 
@@ -415,7 +418,7 @@ public class G_Frecuencias {
     if (tTramos == null) {
       tTramos = new JTable(dTramos);
       tTramos.setBounds(new Rectangle(29, 141, 437, 80));
-      dTramos.addColumn("Origen");      
+      dTramos.addColumn("Origen");
       dTramos.addColumn("Destino");
       dTramos.addColumn("Salida");
       dTramos.addColumn("Llegada");
@@ -519,4 +522,5 @@ public class G_Frecuencias {
     }
     return tFrecuencia;
   }
+  
 }  //  @jve:decl-index=0:visual-constraint="742,42"
