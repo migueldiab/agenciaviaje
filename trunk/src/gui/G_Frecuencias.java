@@ -2,6 +2,7 @@ package gui;
 
 import viajes.Tramo;
 import viajes.Frecuencia;
+import viajes.Viaje;
 
 import global.Ciudad;
 import global.Grupo;
@@ -53,7 +54,7 @@ public class G_Frecuencias {
   private JScrollPane sTramos = null;
   private JTable tTramos = null;
   private DefaultTableModel dTramos = new DefaultTableModel();
-  private JCheckBox cLunes = null;
+  private JCheckBox[] cDia = null;
   private JCheckBox cMartes = null;
   private JCheckBox jMiercoles = null;
   private JCheckBox cJueves = null;
@@ -111,7 +112,7 @@ public class G_Frecuencias {
       pAbmFrecuencias.add(lDias, null);
       pAbmFrecuencias.add(getTTramos(), null);
       pAbmFrecuencias.add(getSTramos(), null);
-      pAbmFrecuencias.add(getCLunes(), null);
+      pAbmFrecuencias.add(getCDia(), null);
       pAbmFrecuencias.add(getCMartes(), null);
       pAbmFrecuencias.add(getJMiercoles(), null);
       pAbmFrecuencias.add(getCJueves(), null);
@@ -252,42 +253,37 @@ public class G_Frecuencias {
   
   private void cargarFrecuencia() {
     
-    Frecuencia u = (Frecuencia) lFrecuencias.getSelectedValue();
+    Frecuencia f = (Frecuencia) lFrecuencias.getSelectedValue();
     
-    tNombre.setText(u.getNombre());    
-    tPrecio.setText(Double.toString(u.getPrecio()));
-    tPasajeros.setText(Integer.toString(u.getCapacidad()));
-        
+    tFrecuencia.setText(f.getNombre());    
+    cViaje.setSelectedItem(f.getViaje());
+    
     dTramos.setRowCount(0);
-    for (Tramo t : u.getTramos()) {      
+    for (Tramo t : f.getViaje().getTramos()) {      
       dTramos.addRow(new Object[]{t.getOrigen(),t.getDestino(),t.getMedio(),t.getDuracion()});  
     }
 
 
   }
   private void buscarFrecuencia() {
-    tNombre.setText("Test2");
+    
   }
   private void guardarFrecuencia() {
     
     try {
-      Frecuencia unFrecuencia = Interfaz.getFrecuenciaPorNombre(tNombre.getText());    
+      Frecuencia unFrecuencia = Interfaz.getFrecuenciaPorNombre(tFrecuencia.getText());    
       if (unFrecuencia == null)
         unFrecuencia = new Frecuencia();
       
       if ((unFrecuencia.getNombre()==null) || (JOptionPane.showConfirmDialog(
-          null,"Desea sobrescribir el Frecuencia "+tNombre.getText()+"?",
+          null,"Desea sobrescribir el Frecuencia "+tFrecuencia.getText()+"?",
           "Confirma guardar?",
           JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION)
         )
       {
-        if (tNombre.getText()!="" )    
+        if (tFrecuencia.getText()!="" )    
         {
-          unFrecuencia.setNombre(tNombre.getText());          
-          unFrecuencia.setOrigen((Ciudad) dTramos.getValueAt(0, 0));
-          unFrecuencia.setDestino((Ciudad) dTramos.getValueAt(dTramos.getRowCount()-1, 1));
-          unFrecuencia.setPrecio(Double.parseDouble(tPrecio.getText()));
-          unFrecuencia.setCapacidad(Integer.parseInt(tPasajeros.getText()));
+          unFrecuencia.setNombre(tFrecuencia.getText());          
 
           ArrayList<Tramo> tramos = new ArrayList<Tramo>();
           for (int i = 0; i < dTramos.getRowCount(); i++) {
@@ -299,11 +295,11 @@ public class G_Frecuencias {
             uTramo.setTramo(i);
             tramos.add(uTramo);
           }
-          unFrecuencia.setTramos(tramos);
+          //unFrecuencia.setTramos(tramos);
           
           if (Interfaz.agregarFrecuencia(unFrecuencia)) {
             lInfo.setForeground(new Color(65, 190, 79));
-            lInfo.setText("Frecuencia " + tNombre.getText() + " guardado");
+            lInfo.setText("Frecuencia " + tFrecuencia.getText() + " guardado");
             cargarListas();
             limpiarCampos();
           }
@@ -356,22 +352,24 @@ public class G_Frecuencias {
     for (Medio m : Interfaz.getMedios()) {
       cMedio.addItem(m);        
     }
+    cViaje.removeAllItems();
+    for (Viaje v : Interfaz.getViajes()) {
+      cViaje.addItem(v);        
+    }    
   }
   
 
 
   private void limpiarCampos() {
     lFrecuencias.clearSelection();    
-    tNombre.setText("");    
-    tPrecio.setText("");
-    tPasajeros.setText("");        
+    tFrecuencia.setText("");    
     dTramos.setRowCount(0);
-    tNombre.requestFocus();
+    tFrecuencia.requestFocus();
     
   }
   private void eliminarFrecuencia(Frecuencia u) {
     if (JOptionPane.showConfirmDialog(
-        null,"Desea eliminar el frecuencia "+tNombre.getText()+"?",
+        null,"Desea eliminar el frecuencia "+tFrecuencia.getText()+"?",
         "Confirma eliminar?",
         JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION)
     { 
@@ -453,17 +451,28 @@ public class G_Frecuencias {
   }
 
   /**
-   * This method initializes cLunes	
+   * This method initializes cDia	
    * 	
    * @return javax.swing.JCheckBox	
    */
-  private JCheckBox getCLunes() {
-    if (cLunes == null) {
-      cLunes = new JCheckBox();
-      cLunes.setBounds(new Rectangle(275, 20, 35, 20));
-      cLunes.setText("L");
+  private JCheckBox getCDia() {
+    if (cDia == null) {
+      cDia[0] = new JCheckBox();
+      cDia[0].setBounds(new Rectangle(275, 20, 35, 20));
+      cDia[0].setText("L");
+      /*
+      cDia[1] = new JCheckBox();
+      cDia[1].setBounds(new Rectangle(275, 20, 35, 20));
+      cDia[1].setText("L");
+      cDia[2] = new JCheckBox();
+      cDia[2].setBounds(new Rectangle(275, 20, 35, 20));
+      cDia[2].setText("L");
+      cDia[3] = new JCheckBox();
+      cDia[3].setBounds(new Rectangle(275, 20, 35, 20));
+      cDia[3].setText("L");
+      */
     }
-    return cLunes;
+    return cDia[0];
   }
 
   /**

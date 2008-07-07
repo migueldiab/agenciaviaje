@@ -72,6 +72,8 @@ public class Inicio {
     unUsuario.setId("admin");
     SisRes.Usuarios.guardar(unUsuario);
 
+    SisRes.usuarioActual = unUsuario;
+    
     unGrupo = new Grupo();
     unGrupo.setId(3);
     unGrupo.setNombre("Vendedor");
@@ -126,5 +128,28 @@ public class Inicio {
     
     SisRes.Viajes.guardar(unViaje);
 
+    unViaje = new Viaje();
+    unViaje.setNombre("OtroViaje");
+    unViaje.setOrigen(unCiudad);
+    unViaje.setDestino(unCiudad);
+    unViaje.setCapacidad(20);
+    unViaje.setPrecio(230.50);
+        
+    unTramo = new Tramo();
+    unTramo.setOrigen(unCiudad);
+    unTramo.setDestino(unCiudad);
+    unTramo.setMedio(unMedio);
+    unTramo.setDuracion(20);
+    unTramo.setTramo(0);
+    unViaje.addTramo(unTramo);
+    
+    SisRes.Viajes.guardar(unViaje);
+
+    Frecuencia unFrecuencia = new Frecuencia();
+    unFrecuencia.setNombre("Diario");
+    unFrecuencia.setDisponible(100);
+    unFrecuencia.setViaje(unViaje);
+    SisRes.Frecuencias.guardar(unFrecuencia);
+    
   }
 }
