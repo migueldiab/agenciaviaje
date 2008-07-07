@@ -11,7 +11,7 @@ public class Viaje {
   private int    capacidad = 0;
   private Ciudad origen = null;
   private Ciudad destino = null;
-  private ArrayList<Tramo> tramos = new ArrayList();
+  private ArrayList<Tramo> tramos = new ArrayList<Tramo>();
 
   /**
    * @return the tramos

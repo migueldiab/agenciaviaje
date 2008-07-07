@@ -1,20 +1,24 @@
 package viajes;
 
+import java.util.ArrayList;
+
 public class Frecuencia {
-  private Tramo  tramo= null;
-  private String salida = "";
-  private String dias = "";
+  private String nombre = "";
+  private ArrayList<Boolean> dias = new ArrayList<Boolean>();
+  private Viaje viaje = null;
   private int    disponible = 0;
+  private ArrayList horas = new ArrayList();
+  
   /**
    * @return the dias
    */
-  public String getDias() {
+  public ArrayList<Boolean> getDias() {
     return dias;
   }
   /**
    * @param dias the dias to set
    */
-  public void setDias(String dias) {
+  public void setDias(ArrayList<Boolean> dias) {
     this.dias = dias;
   }
   /**
@@ -29,29 +33,36 @@ public class Frecuencia {
   public void setDisponible(int disponible) {
     this.disponible = disponible;
   }
-  /**
-   * @return the salida
-   */
-  public String getSalida() {
-    return salida;
+  public String getNombre() {
+    return nombre;
   }
-  /**
-   * @param salida the salida to set
-   */
-  public void setSalida(String salida) {
-    this.salida = salida;
+  public void setNombre(String nombre) {
+    this.nombre = nombre;
   }
-  /**
-   * @return the tramo
-   */
-  public Tramo getTramo() {
-    return tramo;
+  public ArrayList getHoras() {
+    return horas;
   }
-  /**
-   * @param tramo the tramo to set
-   */
-  public void setTramo(Tramo tramo) {
-    this.tramo = tramo;
+  public void setHoras(ArrayList horas) {
+    this.horas = horas;
   }
+  public Viaje getViaje() {
+    return viaje;
+  }
+  public void setViaje(Viaje viaje) {
+    this.viaje = viaje;
+  }
+ 
   
+  
+  @Override
+  public boolean equals(Object arg0) {
+    // TODO Auto-generated method stub
+    return super.equals(arg0);
+  }
+  @Override
+  public String toString() {
+    // TODO Auto-generated method stub
+    return this.getNombre();
+  }
+ 
 }
