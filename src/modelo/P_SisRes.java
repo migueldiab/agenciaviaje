@@ -10,6 +10,8 @@ public class P_SisRes {
   public P_Medios Medios = new P_Medios();
   public P_Usuarios Usuarios = new P_Usuarios();
   public P_Viajes Viajes = new P_Viajes();
+  public P_Descuentos Descuentos = new P_Descuentos();
+  public P_Ventas Ventas = new P_Ventas();
   public static Usuario usuarioActual = null;
   
 }

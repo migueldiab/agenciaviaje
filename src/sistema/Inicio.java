@@ -76,7 +76,7 @@ public class Inicio {
     unUsuario.setId("admin");
     SisRes.Usuarios.guardar(unUsuario);
 
-    SisRes.usuarioActual = unUsuario;
+
     
     unGrupo = new Grupo();
     unGrupo.setId(3);
@@ -158,5 +158,6 @@ public class Inicio {
     unFrecuencia.setHoras(horas);      
     SisRes.Frecuencias.guardar(unFrecuencia);
     
+    //SisRes.usuarioActual = unUsuario;
   }
 }
