@@ -54,13 +54,7 @@ public class G_Frecuencias {
   private JScrollPane sTramos = null;
   private JTable tTramos = null;
   private DefaultTableModel dTramos = new DefaultTableModel();
-  private JCheckBox[] cDia = null;
-  private JCheckBox cMartes = null;
-  private JCheckBox jMiercoles = null;
-  private JCheckBox cJueves = null;
-  private JCheckBox cViernes = null;
-  private JCheckBox cSabado = null;
-  private JCheckBox cDomingo = null;
+  private JCheckBox[] cDia = new JCheckBox[7];
   private JComboBox cViaje = null;
   private JLabel lFrecuencia = null;
   private JTextField tFrecuencia = null;
@@ -112,13 +106,11 @@ public class G_Frecuencias {
       pAbmFrecuencias.add(lDias, null);
       pAbmFrecuencias.add(getTTramos(), null);
       pAbmFrecuencias.add(getSTramos(), null);
-      pAbmFrecuencias.add(getCDia(), null);
-      pAbmFrecuencias.add(getCMartes(), null);
-      pAbmFrecuencias.add(getJMiercoles(), null);
-      pAbmFrecuencias.add(getCJueves(), null);
-      pAbmFrecuencias.add(getCViernes(), null);
-      pAbmFrecuencias.add(getCSabado(), null);
-      pAbmFrecuencias.add(getCDomingo(), null);
+      int i = 0;
+      cDia = getCDia();
+      for (i=0;i<7;i++) {
+        pAbmFrecuencias.add(cDia[i], null);        
+      }
       pAbmFrecuencias.add(getCViaje(), null);
       pAbmFrecuencias.add(lFrecuencia, null);
       pAbmFrecuencias.add(getTFrecuencia(), null);
@@ -257,7 +249,11 @@ public class G_Frecuencias {
     
     tFrecuencia.setText(f.getNombre());    
     cViaje.setSelectedItem(f.getViaje());
-    
+    int i = 0;
+    for (boolean cb : f.getDias()) {
+      if (cb) cDia[i].setSelected(true);
+      i++;
+    }
     dTramos.setRowCount(0);
     for (Tramo t : f.getViaje().getTramos()) {      
       dTramos.addRow(new Object[]{t.getOrigen(),t.getDestino(),t.getMedio(),t.getDuracion()});  
@@ -285,6 +281,13 @@ public class G_Frecuencias {
         {
           unFrecuencia.setNombre(tFrecuencia.getText());          
 
+          
+          ArrayList<Boolean> dias = new ArrayList<Boolean>();
+          for (int i = 0;i<7;i++) {
+            dias.add(cDia[i].isSelected());          
+          }
+          unFrecuencia.setDias(dias);
+            
           ArrayList<Tramo> tramos = new ArrayList<Tramo>();
           for (int i = 0; i < dTramos.getRowCount(); i++) {
             Tramo uTramo = new Tramo();
@@ -365,6 +368,10 @@ public class G_Frecuencias {
     tFrecuencia.setText("");    
     dTramos.setRowCount(0);
     tFrecuencia.requestFocus();
+    for (int i=0;i<7;i++) {
+      cDia[i].setSelected(false);
+    }
+    
     
   }
   private void eliminarFrecuencia(Frecuencia u) {
@@ -446,8 +453,6 @@ public class G_Frecuencias {
       dTramos.addRow(new Object[]{origen,null,null,0});
       
     }
-    
-      
   }
 
   /**
@@ -455,109 +460,33 @@ public class G_Frecuencias {
    * 	
    * @return javax.swing.JCheckBox	
    */
-  private JCheckBox getCDia() {
-    if (cDia == null) {
+  private JCheckBox[] getCDia() {
+    if (cDia[0] == null) {
       cDia[0] = new JCheckBox();
       cDia[0].setBounds(new Rectangle(275, 20, 35, 20));
       cDia[0].setText("L");
-      /*
       cDia[1] = new JCheckBox();
-      cDia[1].setBounds(new Rectangle(275, 20, 35, 20));
-      cDia[1].setText("L");
+      cDia[1] .setBounds(new Rectangle(275, 40, 35, 20));
+      cDia[1] .setText("M");
       cDia[2] = new JCheckBox();
-      cDia[2].setBounds(new Rectangle(275, 20, 35, 20));
-      cDia[2].setText("L");
+      cDia[2] .setBounds(new Rectangle(310, 20, 40, 20));
+      cDia[2] .setText("Mi");
       cDia[3] = new JCheckBox();
-      cDia[3].setBounds(new Rectangle(275, 20, 35, 20));
-      cDia[3].setText("L");
-      */
+      cDia[3] .setBounds(new Rectangle(310, 40, 35, 20));
+      cDia[3] .setText("J");
+      cDia[4] = new JCheckBox();
+      cDia[4] .setBounds(new Rectangle(350, 20, 35, 20));
+      cDia[4] .setText("V");
+      cDia[5] = new JCheckBox();
+      cDia[5] .setBounds(new Rectangle(350, 40, 35, 20));
+      cDia[5] .setText("S");
+      cDia[6] = new JCheckBox();
+      cDia[6] .setBounds(new Rectangle(385, 20, 35, 20));
+      cDia[6] .setText("D");
     }
-    return cDia[0];
+    return cDia;
   }
 
-  /**
-   * This method initializes cMartes	
-   * 	
-   * @return javax.swing.JCheckBox	
-   */
-  private JCheckBox getCMartes() {
-    if (cMartes == null) {
-      cMartes = new JCheckBox();
-      cMartes.setBounds(new Rectangle(275, 40, 35, 20));
-      cMartes.setText("M");
-    }
-    return cMartes;
-  }
-
-  /**
-   * This method initializes jMiercoles	
-   * 	
-   * @return javax.swing.JCheckBox	
-   */
-  private JCheckBox getJMiercoles() {
-    if (jMiercoles == null) {
-      jMiercoles = new JCheckBox();
-      jMiercoles.setBounds(new Rectangle(310, 20, 40, 20));
-      jMiercoles.setText("Mi");
-    }
-    return jMiercoles;
-  }
-
-  /**
-   * This method initializes cJueves	
-   * 	
-   * @return javax.swing.JCheckBox	
-   */
-  private JCheckBox getCJueves() {
-    if (cJueves == null) {
-      cJueves = new JCheckBox();
-      cJueves.setBounds(new Rectangle(310, 40, 35, 20));
-      cJueves.setText("J");
-    }
-    return cJueves;
-  }
-
-  /**
-   * This method initializes cViernes	
-   * 	
-   * @return javax.swing.JCheckBox	
-   */
-  private JCheckBox getCViernes() {
-    if (cViernes == null) {
-      cViernes = new JCheckBox();
-      cViernes.setBounds(new Rectangle(350, 20, 35, 20));
-      cViernes.setText("V");
-    }
-    return cViernes;
-  }
-
-  /**
-   * This method initializes cSabado	
-   * 	
-   * @return javax.swing.JCheckBox	
-   */
-  private JCheckBox getCSabado() {
-    if (cSabado == null) {
-      cSabado = new JCheckBox();
-      cSabado.setBounds(new Rectangle(350, 40, 35, 20));
-      cSabado.setText("S");
-    }
-    return cSabado;
-  }
-
-  /**
-   * This method initializes cDomingo	
-   * 	
-   * @return javax.swing.JCheckBox	
-   */
-  private JCheckBox getCDomingo() {
-    if (cDomingo == null) {
-      cDomingo = new JCheckBox();
-      cDomingo.setBounds(new Rectangle(385, 20, 35, 20));
-      cDomingo.setText("D");
-    }
-    return cDomingo;
-  }
 
   /**
    * This method initializes cViaje	
