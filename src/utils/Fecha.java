@@ -1,6 +1,9 @@
 package utils;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.sql.Time;
 
 /**
@@ -193,5 +196,27 @@ public class Fecha {
 		t = new Time(c.getTimeInMillis());
 		return t;
 	}
-
+  public static Date parseHora(String s) {
+    DateFormat formatoHora = new SimpleDateFormat("HH:mm");
+    try {
+      Date h = formatoHora.parse(s);
+      return h;
+    }
+    catch(Exception e) {
+      return null;
+    }    
+  }
+  public static String toString(Date h) {
+    return Fecha.toString(h, "HH:mm");    
+  }
+  public static String toString(Date h, String f) {
+    DateFormat formatoHora = new SimpleDateFormat(f);
+    try {
+      String s = formatoHora.format(h);
+      return s;
+    }
+    catch(Exception e) {
+      return null;
+    }    
+  }
 }

@@ -33,7 +33,7 @@ public class P_Frecuencias {
   
   public static Frecuencia getFrecuenciaPorNombre(String nombre) {
     for (Frecuencia u : P_Frecuencias.frecuencias) {
-      //if (u.getNombre().equals(nombre))
+      if (u.getNombre().equals(nombre))
         return u;
     }
     return null;
