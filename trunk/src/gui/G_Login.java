@@ -41,7 +41,7 @@ public class G_Login extends JFrame {
     initialize();
     // Para evitar la autenticación, sacar el comentario de abajo
     
-    G_Principal.cargar(); 
+    //G_Principal.cargar(); 
   }
 
   /**

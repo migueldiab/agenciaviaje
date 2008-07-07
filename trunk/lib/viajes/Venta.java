@@ -1,5 +1,7 @@
 package viajes;
 
+import global.Usuario;
+
 import java.util.Date;
 
 import clientes.Pasajero;
@@ -10,6 +12,7 @@ public class Venta {
   private Date       fecha = null;
   private Pasajero   pasajero = null;
   private String     codigo = "";
+  private Usuario    vendedor = null;  
   /**
    * @return the codigo
    */
@@ -69,5 +72,17 @@ public class Venta {
    */
   public void setTotal(double total) {
     this.total = total;
+  }
+  /**
+   * @return the vendedor
+   */
+  public Usuario getVendedor() {
+    return vendedor;
+  }
+  /**
+   * @param vendedor the vendedor to set
+   */
+  public void setVendedor(Usuario vendedor) {
+    this.vendedor = vendedor;
   }
 }
