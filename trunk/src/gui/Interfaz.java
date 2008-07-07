@@ -3,6 +3,9 @@ package gui;
 import global.*;
 
 import java.util.ArrayList;
+import java.util.Date;
+
+import clientes.*;
 
 import viajes.*;
 
@@ -64,6 +67,9 @@ public class Interfaz {
   public static boolean eliminarViaje(Viaje u) {
     return P_Viajes.eliminar(u);
   }
+  public static ArrayList<Viaje> getViajesVenta(Date f, Ciudad o, Ciudad d) {
+    return P_Viajes.getViajesVenta(f,o,d);
+  }
   
   /*
    *  Frecuencias
@@ -79,6 +85,9 @@ public class Interfaz {
   }
   public static boolean eliminarFrecuencia(Frecuencia u) {
     return P_Frecuencias.eliminar(u);
+  }
+  public static ArrayList<Frecuencia> getFrecuenciasPorViaje(Viaje v) {
+    return P_Frecuencias.getFrecuenciasPorViaje(v);
   }
   
   /*
@@ -131,4 +140,48 @@ public class Interfaz {
   public static boolean eliminarTramo(Tramo u) {
     return P_Tramos.eliminar(u);
   }    
+  /*
+   *  Ventas
+   */
+  public static ArrayList<Venta> getVentas() {
+    return P_Ventas.getVentas();
+  }
+  public static ArrayList<Venta> ventasPorFrecuencia(Frecuencia f) {
+    return P_Ventas.getVentasPorFrecuencia(f);
+  }
+  public static Venta getVentaPorCodigo(String s) {
+    return P_Ventas.getVentaPorCodigo(s);
+  }
+  public static Venta getVentasPorVendedor(Usuario u) {
+    return P_Ventas.getVentasPorVendedor(u);
+  }
+  
+  /*
+  public static Venta getVentaPorNombre(String s) {
+    return P_Ventas.getVentaPorNombre(s);
+  } 
+  
+  */
+
+  public static boolean agregarVenta(Venta u) {
+    return P_Ventas.guardar(u);
+  }
+  public static boolean eliminarVenta(Venta u) {
+    return P_Ventas.eliminar(u);
+  }  
+  /*
+   *  Descuentos
+   */  
+  public static ArrayList<Descuento> getDescuentos() {
+    return P_Descuentos.getDescuentos();
+  }
+  public static Descuento getDescuentoPorNombre(String s) {
+    return P_Descuentos.getDescuentoPorNombre(s);
+  }  
+  public static boolean agregarDescuento(Descuento u) {
+    return P_Descuentos.guardar(u);
+  }
+  public static boolean eliminarDescuento(Descuento u) {
+    return P_Descuentos.eliminar(u);
+  }  
 }

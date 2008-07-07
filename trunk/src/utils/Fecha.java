@@ -206,10 +206,10 @@ public class Fecha {
       return null;
     }    
   }
-  public static String toString(Date h) {
-    return Fecha.toString(h, "HH:mm");    
+  public static String horaToString(Date h) {
+    return Fecha.horaToString(h, "HH:mm");    
   }
-  public static String toString(Date h, String f) {
+  public static String horaToString(Date h, String f) {
     DateFormat formatoHora = new SimpleDateFormat(f);
     try {
       String s = formatoHora.format(h);
@@ -219,4 +219,29 @@ public class Fecha {
       return null;
     }    
   }
+  
+  public static Date parseFecha(String s) {
+    DateFormat formato = new SimpleDateFormat("dd/mm/aa");
+    try {
+      Date h = formato.parse(s);
+      return h;
+    }
+    catch(Exception e) {
+      return null;
+    }    
+  }
+  public static String fechaToString(Date h) {
+    return Fecha.fechaToString(h, "dd/mm/aa");    
+  }
+  public static String fechaToString(Date h, String f) {
+    DateFormat formato = new SimpleDateFormat(f);
+    try {
+      String s = formato.format(h);
+      return s;
+    }
+    catch(Exception e) {
+      return null;
+    }    
+  }
+  
 }
