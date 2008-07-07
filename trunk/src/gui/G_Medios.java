@@ -248,12 +248,17 @@ public class G_Medios {
       {      
         unMedio.setNombre(tNombre.getText());
         unMedio.setId(Integer.parseInt(tId.getText()));
-        Interfaz.agregarMedio(unMedio);
-        lInfo.setForeground(new Color(65, 190, 79));
-        lInfo.setText("Medio " + tNombre.getText() + " guardado");
-        
-        limpiarCampos();
-        cargarListas();
+        if (Interfaz.agregarMedio(unMedio)) {
+          lInfo.setForeground(new Color(65, 190, 79));
+          lInfo.setText("Medio " + tNombre.getText() + " guardado");
+          limpiarCampos();
+          cargarListas();
+        }
+        else {
+          lInfo.setForeground(new Color(190, 65, 79));
+          lInfo.setText("No se pudo agregar el medio.");           
+        }
+        ;
       }
       else {
         lInfo.setForeground(new Color(190, 65, 79));
@@ -275,8 +280,7 @@ public class G_Medios {
       bNuevo.addActionListener(new java.awt.event.ActionListener() {   
         public void actionPerformed(java.awt.event.ActionEvent e) {    
           cargarListas();
-          limpiarCampos();
-          
+          limpiarCampos();          
         }
       
       });
@@ -291,8 +295,7 @@ public class G_Medios {
   }
 
   private void limpiarCampos() {
-    lMedios.clearSelection();
-    
+    lMedios.clearSelection();    
     tNombre.setText("");
     tId.setText("");
     tId.requestFocus();
@@ -303,9 +306,14 @@ public class G_Medios {
         "Confirma eliminar?",
         JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION)
     { 
-      Interfaz.eliminarMedio(u);
-      cargarListas();
-      limpiarCampos();
+      if (Interfaz.eliminarMedio(u)) {
+        cargarListas();
+        limpiarCampos();
+      }
+      else {
+        lInfo.setForeground(new Color(190, 65, 79));
+        lInfo.setText("No se pudo eliminar el medio.");           
+      }
     }
   }
 

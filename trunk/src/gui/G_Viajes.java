@@ -301,17 +301,20 @@ public class G_Viajes {
             uTramo.setMedio((Medio) dTramos.getValueAt(i, 2));
             uTramo.setDuracion(Integer.parseInt(dTramos.getValueAt(i, 3).toString()));
             uTramo.setTramo(i);
-            if (!tramos.add(uTramo)) {
-              
-            }
+            tramos.add(uTramo);
           }
           unViaje.setTramos(tramos);
-          Interfaz.agregarViaje(unViaje);
-
-          lInfo.setForeground(new Color(65, 190, 79));
-          lInfo.setText("Viaje " + tNombre.getText() + " guardado");
-          cargarListas();
-          limpiarCampos();
+          
+          if (Interfaz.agregarViaje(unViaje)) {
+            lInfo.setForeground(new Color(65, 190, 79));
+            lInfo.setText("Viaje " + tNombre.getText() + " guardado");
+            cargarListas();
+            limpiarCampos();
+          }
+          else {
+            lInfo.setForeground(new Color(190, 65, 79));
+            lInfo.setText("Los tramos no son correctos. Verifique.");        
+          }
         }
         else {
           lInfo.setForeground(new Color(190, 65, 79));
@@ -364,11 +367,9 @@ public class G_Viajes {
   private void limpiarCampos() {
     lViajes.clearSelection();    
     tNombre.setText("");    
-    
     tPrecio.setText("");
     tPasajeros.setText("");        
     dTramos.setRowCount(0);
-
     tNombre.requestFocus();
     
   }
@@ -378,9 +379,14 @@ public class G_Viajes {
         "Confirma eliminar?",
         JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION)
     { 
-      Interfaz.eliminarViaje(u);
-      cargarListas();
-      limpiarCampos();
+      if (Interfaz.eliminarViaje(u)) {
+        cargarListas();
+        limpiarCampos();
+      }
+      else {
+        lInfo.setForeground(new Color(190, 65, 79));
+        lInfo.setText("No se pudo eliminar el medio.");           
+      }
     }
   }
 

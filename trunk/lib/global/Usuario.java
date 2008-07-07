@@ -2,6 +2,12 @@ package global;
 
 
 public class Usuario {
+  private String id = null;
+  private String nombre = null;
+  private String apellido = null;
+  private String clave = null;
+  private Grupo grupo = null;
+
   /* (non-Javadoc)
    * @see java.lang.Object#equals(java.lang.Object)
    */
@@ -26,11 +32,6 @@ public class Usuario {
     // TODO Auto-generated method stub
     return this.getId();
   }
-  private String id = null;
-  private String nombre = null;
-  private String apellido = null;
-  private String clave = null;
-  private Grupo grupo = null;
   /**
    * @return the grupo
    */

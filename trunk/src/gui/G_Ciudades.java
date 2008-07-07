@@ -181,7 +181,6 @@ public class G_Ciudades {
             if (lCiudades.getSelectedIndex()!=-1) {
               cargarCiudad();
               lInfo.setText("");
-
             }
           }
         });
@@ -224,8 +223,7 @@ public class G_Ciudades {
     return bBuscar;
   }
   
-  private void cargarCiudad() {
-    
+  private void cargarCiudad() {    
     Ciudad u = (Ciudad) lCiudades.getSelectedValue();    
     tNombre.setText(u.getNombre());
     tCodigo.setText(u.getCodigo());
@@ -236,8 +234,7 @@ public class G_Ciudades {
   private void guardarCiudad() {
     Ciudad unCiudad = Interfaz.getCiudadPorCodigo(tCodigo.getText());    
     if (unCiudad == null)
-      unCiudad = new Ciudad();
-    
+      unCiudad = new Ciudad();    
     if ((unCiudad.getId()==-1) || (JOptionPane.showConfirmDialog(
         null,"Desea sobrescribir el Ciudad "+tCodigo.getText()+"?",
         "Confirma guardar?",
@@ -248,11 +245,16 @@ public class G_Ciudades {
       {      
         unCiudad.setNombre(tNombre.getText());
         unCiudad.setCodigo(tCodigo.getText());
-        Interfaz.agregarCiudad(unCiudad);
-        lInfo.setForeground(new Color(65, 190, 79));
-        lInfo.setText("Ciudad " + tNombre.getText() + " guardado");
-        cargarListas();
-        limpiarCampos();
+        if (Interfaz.agregarCiudad(unCiudad)) {
+          lInfo.setForeground(new Color(65, 190, 79));
+          lInfo.setText("Ciudad " + tNombre.getText() + " guardado");
+          cargarListas();
+          limpiarCampos();          
+        }
+        else {
+          lInfo.setForeground(new Color(190, 65, 79));
+          lInfo.setText("No se pudo guardar la ciudad. Verifique datos y reintente.");          
+        }
       }
       else {
         lInfo.setForeground(new Color(190, 65, 79));
@@ -288,8 +290,7 @@ public class G_Ciudades {
   }
 
   private void limpiarCampos() {
-    lCiudades.clearSelection();
-    
+    lCiudades.clearSelection();    
     tNombre.setText("");
     tCodigo.setText("");
     tCodigo.requestFocus();
@@ -300,9 +301,13 @@ public class G_Ciudades {
         "Confirma eliminar?",
         JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION)
     { 
-      Interfaz.eliminarCiudad(u);
-      cargarListas();
-      limpiarCampos();
+      if (Interfaz.eliminarCiudad(u)) {        
+        cargarListas();
+        limpiarCampos();      }
+      else {
+        lInfo.setForeground(new Color(190, 65, 79));
+        lInfo.setText("No se pudo eliminar la ciudad.");          
+      }
     }
   }
 

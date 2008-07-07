@@ -31,14 +31,6 @@ public class P_Frecuencias {
     }      
   }
   
-  public static Frecuencia getFrecuenciaPorId(int id) {
-    for (Frecuencia u : P_Frecuencias.frecuencias) {
-      if (u.getId()==id)
-        return u;
-    }
-    return null;
-  }
-  
   public static Frecuencia getFrecuenciaPorNombre(String nombre) {
     for (Frecuencia u : P_Frecuencias.frecuencias) {
       //if (u.getNombre().equals(nombre))

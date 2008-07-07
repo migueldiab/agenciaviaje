@@ -1,5 +1,7 @@
 package modelo;
 
+import global.Usuario;
+
 
 public class P_SisRes {
   public P_Ciudades Ciudades = new P_Ciudades();
@@ -8,6 +10,6 @@ public class P_SisRes {
   public P_Medios Medios = new P_Medios();
   public P_Usuarios Usuarios = new P_Usuarios();
   public P_Viajes Viajes = new P_Viajes();
-  
+  public static Usuario usuarioActual = null;
   
 }

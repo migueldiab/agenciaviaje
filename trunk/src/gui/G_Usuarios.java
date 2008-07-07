@@ -326,11 +326,16 @@ public class G_Usuarios {
         unUsuario.setApellido(tApellido.getText());
         unUsuario.setClave(tClave1.getText());
         unUsuario.setGrupo((Grupo) cGrupo.getSelectedItem());
-        Interfaz.agregarUsuario(unUsuario);
-        lInfo.setForeground(new Color(65, 190, 79));
-        lInfo.setText("Usuario " + tId.getText() + " guardado");
-        cargarListas();
-        limpiarCampos();
+        if (Interfaz.agregarUsuario(unUsuario)) {
+          lInfo.setForeground(new Color(65, 190, 79));
+          lInfo.setText("Usuario " + tId.getText() + " guardado");
+          cargarListas();
+          limpiarCampos();
+        }
+        else {
+          lInfo.setForeground(new Color(190, 65, 79));
+          lInfo.setText("No se pudo eliminar el medio.");           
+        }
       }
       else {
         lInfo.setForeground(new Color(190, 65, 79));
@@ -352,8 +357,7 @@ public class G_Usuarios {
       bNuevo.addActionListener(new java.awt.event.ActionListener() {   
       	public void actionPerformed(java.awt.event.ActionEvent e) {    
       		limpiarCampos();
-      	}
-      
+      	}      
       });
     }
     return bNuevo;
@@ -415,9 +419,14 @@ public class G_Usuarios {
         "Confirma eliminar?",
         JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION)
     { 
-      Interfaz.eliminarUsuario(u);
-      cargarListas();
-      limpiarCampos();
+      if (Interfaz.eliminarUsuario(u)) {
+        cargarListas();
+        limpiarCampos();
+      }
+      else {
+        lInfo.setForeground(new Color(190, 65, 79));
+        lInfo.setText("No se pudo eliminar el medio.");           
+      }      
     }
   }
 }  

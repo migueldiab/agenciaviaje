@@ -74,9 +74,6 @@ public class Interfaz {
   public static Frecuencia getFrecuenciaPorNombre(String s) {
     return P_Frecuencias.getFrecuenciaPorNombre(s);
   }  
-  public static Frecuencia getFrecuenciaPorId(int id) {
-    return P_Frecuencias.getFrecuenciaPorId(id);
-  }  
   public static boolean agregarFrecuencia(Frecuencia u) {
     return P_Frecuencias.guardar(u);
   }

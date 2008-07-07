@@ -5,7 +5,6 @@ import java.util.Date;
 import clientes.Pasajero;
 
 public class Venta {
-  private int        id = 0;
   private Frecuencia frecuencia = null;
   private double     total = 0;
   private Date       fecha = null;
@@ -46,18 +45,6 @@ public class Venta {
    */
   public void setFrecuencia(Frecuencia frecuencia) {
     this.frecuencia = frecuencia;
-  }
-  /**
-   * @return the id
-   */
-  public int getId() {
-    return id;
-  }
-  /**
-   * @param id the id to set
-   */
-  public void setId(int id) {
-    this.id = id;
   }
   /**
    * @return the pasajero

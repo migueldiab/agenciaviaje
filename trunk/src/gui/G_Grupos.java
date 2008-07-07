@@ -109,8 +109,7 @@ public class G_Grupos {
       bGuardar.setText("Guardar");
       bGuardar.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent e) {
-          guardarGrupo();
-          
+          guardarGrupo();          
         }
       });
     }
@@ -222,8 +221,7 @@ public class G_Grupos {
     return bBuscar;
   }
   
-  private void cargarGrupo() {
-    
+  private void cargarGrupo() {    
     Grupo u = (Grupo) lGrupos.getSelectedValue();    
     tId.setText(Integer.toString(u.getId()));
     tNombre.setText(u.getNombre());
@@ -242,15 +240,20 @@ public class G_Grupos {
         JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION)
       )
     {
-      if (tId.getText()!="")    
+      if (tId.getText()!="")
       {      
         unGrupo.setId(Integer.parseInt(tId.getText()));
         unGrupo.setNombre(tNombre.getText());
-        Interfaz.agregarGrupo(unGrupo);
-        lInfo.setForeground(new Color(65, 190, 79));
-        lInfo.setText("Grupo " + tId.getText() + " guardado");
-        cargarListaGrupos();
-        limpiarCampos();
+        if (Interfaz.agregarGrupo(unGrupo)) {        
+          lInfo.setForeground(new Color(65, 190, 79));
+          lInfo.setText("Grupo " + tId.getText() + " guardado");
+          cargarListaGrupos();
+          limpiarCampos();
+        }
+        else {
+          lInfo.setForeground(new Color(190, 65, 79));
+          lInfo.setText("No se pudo agregar el grupo.");          
+        }        
       }
       else {
         lInfo.setForeground(new Color(190, 65, 79));
@@ -283,7 +286,6 @@ public class G_Grupos {
     for (Grupo u : Interfaz.getGrupos()) {
       listaGrupos.addElement(u);  
     }
-
   }
 
 
@@ -300,8 +302,7 @@ public class G_Grupos {
     return tId;
   }
   private void limpiarCampos() {
-    lGrupos.clearSelection();
-    
+    lGrupos.clearSelection();    
     tId.setText("");
     tNombre.setText("");
     tId.requestFocus();
@@ -312,9 +313,14 @@ public class G_Grupos {
         "Confirma eliminar?",
         JOptionPane.YES_NO_OPTION)==JOptionPane.YES_OPTION)
     { 
-      Interfaz.eliminarGrupo(u);
-      cargarListaGrupos();
-      limpiarCampos();
+      if (Interfaz.eliminarGrupo(u)) {        
+        cargarListaGrupos();
+        limpiarCampos();
+      }
+      else {
+        lInfo.setForeground(new Color(190, 65, 79));
+        lInfo.setText("No se pudo eliminar el grupo.");          
+      }
     }
   }
 }  

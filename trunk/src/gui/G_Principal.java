@@ -18,6 +18,10 @@ import javax.swing.JFrame;
 import javax.swing.JDialog;
 import javax.swing.SwingUtilities;
 
+import sistema.Inicio;
+
+import modelo.P_SisRes;
+
 public class G_Principal {
 
   private JFrame jFrame = null;  //  @jve:decl-index=0:visual-constraint="10,10"
@@ -26,6 +30,7 @@ public class G_Principal {
   private JMenuBar jJMenuBar = null;
   private JMenu fileMenu = null;
   private JMenuItem exitMenuItem = null;
+  private JMenuItem cambiarUsuarioMenuItem = null;  
   private JMenu editMenu = null;
   private JMenuItem cutMenuItem = null;
   private JMenuItem copyMenuItem = null;
@@ -52,7 +57,6 @@ public class G_Principal {
 
   private JMenu helpMenu = null;
   private JMenuItem aboutMenuItem = null;
-  //private JMenuItem saveMenuItem = null;
   private JDialog aboutDialog = null;
   private JPanel aboutContentPane = null;
   private JLabel aboutVersionLabel = null;
@@ -121,7 +125,7 @@ public class G_Principal {
     if (fileMenu == null) {
       fileMenu = new JMenu();
       fileMenu.setText("Archivo");
-      //fileMenu.add(getSaveMenuItem());
+      fileMenu.add(getCambiarUsuarioMenuItem());
       fileMenu.add(getExitMenuItem());
     }
     return fileMenu;
@@ -161,20 +165,22 @@ public class G_Principal {
       usuariosMenuItem.setText("Usuarios");
       usuariosMenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-          if (dUsuario == null) {
-            G_Usuarios guiUsuario = new G_Usuarios();
-            dUsuario = guiUsuario.getDAbmUsuarios();
-            dUsuario.pack();
-            Point loc = getJFrame().getLocation();
-            loc.translate(20, 20);
-            dUsuario.setLocation(loc);
-            dUsuario.setBounds(10,10,380,300);
-            dUsuario.setVisible(true);            
-          }
-          else {
-            dUsuario.setVisible(true);
-          }
-          
+          if (P_SisRes.usuarioActual.getGrupo().tienePermiso("*") ||
+              P_SisRes.usuarioActual.getGrupo().tienePermiso("Usuarios")) {
+            if (dUsuario == null) {
+              G_Usuarios guiUsuario = new G_Usuarios();
+              dUsuario = guiUsuario.getDAbmUsuarios();
+              dUsuario.pack();
+              Point loc = getJFrame().getLocation();
+              loc.translate(20, 20);
+              dUsuario.setLocation(loc);
+              dUsuario.setBounds(10,10,380,300);
+              dUsuario.setVisible(true);            
+            }
+            else {
+              dUsuario.setVisible(true);
+            }
+          }          
         }
       });
     }
@@ -186,6 +192,8 @@ public class G_Principal {
       gruposMenuItem.setText("Grupos");
       gruposMenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
+          if (P_SisRes.usuarioActual.getGrupo().tienePermiso("*") ||
+              P_SisRes.usuarioActual.getGrupo().tienePermiso("Grupos")) {
           if (dGrupo == null) {
             G_Grupos guiGrupo = new G_Grupos();
             dGrupo = guiGrupo.getDAbmGrupos();
@@ -199,7 +207,7 @@ public class G_Principal {
           else {
             dGrupo.setVisible(true);
           }
-
+          }
         }
       });
     }
@@ -223,6 +231,11 @@ public class G_Principal {
       clientesMenuItem.setText("Clientes");
       clientesMenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
+          if (P_SisRes.usuarioActual.getGrupo().tienePermiso("*") ||
+              P_SisRes.usuarioActual.getGrupo().tienePermiso("Clientes")) {
+            
+          }
+
           
         }
       });
@@ -235,7 +248,11 @@ public class G_Principal {
       descuentosMenuItem.setText("Descuentos");
       descuentosMenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-          
+          if (P_SisRes.usuarioActual.getGrupo().tienePermiso("*") ||
+              P_SisRes.usuarioActual.getGrupo().tienePermiso("Descuentos")) {
+            
+          }
+
         }
       });
     }
@@ -260,6 +277,9 @@ public class G_Principal {
       viajesMenuItem.setText("Viajes");
       viajesMenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
+          if (P_SisRes.usuarioActual.getGrupo().tienePermiso("*") ||
+              P_SisRes.usuarioActual.getGrupo().tienePermiso("Viajes")) {
+
           if (dViaje == null) {
             G_Viajes guiViaje = new G_Viajes();
             dViaje = guiViaje.getDAbmViajes();
@@ -272,7 +292,8 @@ public class G_Principal {
           }
           else {
             dViaje.setVisible(true);
-          }          
+          }
+          }
         }
       });
     }
@@ -284,6 +305,9 @@ public class G_Principal {
       frecuenciasMenuItem.setText("Frecuencias");
       frecuenciasMenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
+          if (P_SisRes.usuarioActual.getGrupo().tienePermiso("*") ||
+              P_SisRes.usuarioActual.getGrupo().tienePermiso("Frecuencias")) {
+
           if (dFrecuencia == null) {
             G_Frecuencias guiFrecuencia = new G_Frecuencias();
             dFrecuencia = guiFrecuencia.getDAbmFrecuencias();
@@ -297,6 +321,7 @@ public class G_Principal {
           else {
             dFrecuencia.setVisible(true);
           }                    
+          }
         }
       });
     }
@@ -308,6 +333,9 @@ public class G_Principal {
       mediosMenuItem.setText("Medios");
       mediosMenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
+          if (P_SisRes.usuarioActual.getGrupo().tienePermiso("*") ||
+              P_SisRes.usuarioActual.getGrupo().tienePermiso("Medios")) {
+
           if (dMedio == null) {
             G_Medios guiMedio = new G_Medios();
             dMedio = guiMedio.getDAbmMedios();
@@ -321,6 +349,7 @@ public class G_Principal {
           else {
             dMedio.setVisible(true);
           }                 
+          }
         }
       });
     }
@@ -332,6 +361,9 @@ public class G_Principal {
       ciudadesMenuItem.setText("Ciudades");
       ciudadesMenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
+          if (P_SisRes.usuarioActual.getGrupo().tienePermiso("*") ||
+              P_SisRes.usuarioActual.getGrupo().tienePermiso("Ciudades")) {
+
           if (dCiudad == null) {
             G_Ciudades guiCiudad = new G_Ciudades();
             dCiudad = guiCiudad.getDAbmCiudades();
@@ -345,6 +377,7 @@ public class G_Principal {
           else {
             dCiudad.setVisible(true);
           }          
+          }
         }
       });
     }
@@ -356,7 +389,11 @@ public class G_Principal {
       ventasMenuItem.setText("Ventas");
       ventasMenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
-          
+          if (P_SisRes.usuarioActual.getGrupo().tienePermiso("*") ||
+              P_SisRes.usuarioActual.getGrupo().tienePermiso("Ventas")) {
+            
+          }
+
         }
       });
     }
@@ -378,7 +415,11 @@ public class G_Principal {
       listado1MenuItem.setText("L1");
       listado1MenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
+          if (P_SisRes.usuarioActual.getGrupo().tienePermiso("*") ||
+              P_SisRes.usuarioActual.getGrupo().tienePermiso("Listado")) {
           
+          }
+
         }
       });
     }
@@ -390,7 +431,11 @@ public class G_Principal {
       listado2MenuItem.setText("L2");
       listado2MenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
+          if (P_SisRes.usuarioActual.getGrupo().tienePermiso("*") ||
+              P_SisRes.usuarioActual.getGrupo().tienePermiso("Listado")) {
           
+          }
+
         }
       });
     }
@@ -402,7 +447,11 @@ public class G_Principal {
       listado3MenuItem.setText("L3");
       listado3MenuItem.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent e) {
+          if (P_SisRes.usuarioActual.getGrupo().tienePermiso("*") ||
+              P_SisRes.usuarioActual.getGrupo().tienePermiso("Listado")) {
           
+          }
+        
         }
       });
     }
@@ -438,6 +487,21 @@ public class G_Principal {
     }
     return exitMenuItem;
   }
+  private JMenuItem getCambiarUsuarioMenuItem() {
+    if (cambiarUsuarioMenuItem == null) {
+      cambiarUsuarioMenuItem  = new JMenuItem();
+      cambiarUsuarioMenuItem.setText("Cambiar Usuario");
+      cambiarUsuarioMenuItem.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+          jFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);          
+          Inicio.ventana.setVisible(true); 
+          jFrame.setVisible(false);
+        }
+      });
+    }
+    return cambiarUsuarioMenuItem;
+  }
+
   /**
    * This method initializes jMenuItem	
    * 	
@@ -569,6 +633,7 @@ public class G_Principal {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         G_Principal application = new G_Principal();
+        
         application.getJFrame().setVisible(true);
       }
     });

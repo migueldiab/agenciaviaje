@@ -11,8 +11,10 @@ public class P_Usuarios {
   public static boolean login(String usuario, char[] clave) {
     Usuario miUsuario = P_Usuarios.getUsuarioPorId(usuario);
     String pass = new String(clave);
-    if (miUsuario.getClave().equals(pass))
+    if (miUsuario.getClave().equals(pass)) {
+      P_SisRes.usuarioActual = miUsuario;    
       return true;
+    }
     else
       return false;
   }
