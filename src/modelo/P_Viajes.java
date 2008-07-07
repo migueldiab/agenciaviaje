@@ -1,9 +1,13 @@
 package modelo;
 
 import viajes.Tramo;
+import viajes.Venta;
 import viajes.Viaje;
 
+import global.Ciudad;
+
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class P_Viajes {
@@ -43,6 +47,9 @@ public class P_Viajes {
     return null;
   }
   public static ArrayList<Viaje> getViajes() {
+    return P_Viajes.viajes;
+  }
+  public static ArrayList<Viaje> getViajesVenta(Date f, Ciudad o, Ciudad d) {
     return P_Viajes.viajes;
   }
   

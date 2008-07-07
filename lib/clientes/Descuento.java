@@ -3,7 +3,7 @@ package clientes;
 import global.Ciudad;
 
 public class Descuento {
-  private int    id = 0;
+  private int    descuento = 0;
   private String nombre = "";
   private String dias = "";
   private String salidaMin = "";
@@ -37,14 +37,14 @@ public class Descuento {
   /**
    * @return the id
    */
-  public int getId() {
-    return id;
+  public int getDescuento() {
+    return descuento;
   }
   /**
    * @param id the id to set
    */
-  public void setId(int id) {
-    this.id = id;
+  public void setDescuento(int id) {
+    this.descuento = id;
   }
   /**
    * @return the nombre

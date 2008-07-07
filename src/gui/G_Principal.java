@@ -67,6 +67,8 @@ public class G_Principal {
   private JDialog dFrecuencia = null;
   private JDialog dCiudad = null;
   private JDialog dMedio = null;
+  private JDialog dVenta = null;
+  private JDialog dDescuento = null;
   
   /**
    * This method initializes jFrame
@@ -250,7 +252,19 @@ public class G_Principal {
         public void actionPerformed(ActionEvent e) {
           if (P_SisRes.usuarioActual.getGrupo().tienePermiso("*") ||
               P_SisRes.usuarioActual.getGrupo().tienePermiso("Descuentos")) {
-            
+            if (dDescuento == null) {
+              G_Descuentos guiDescuento = new G_Descuentos();
+              dDescuento = guiDescuento.getDAbmDescuentos();
+              dDescuento.pack();
+              Point loc = getJFrame().getLocation();
+              loc.translate(20, 20);
+              dDescuento.setLocation(loc);
+              dDescuento.setBounds(10,10,590,400);
+              dDescuento.setVisible(true);            
+            }
+            else {
+              dDescuento.setVisible(true);
+            }            
           }
 
         }
@@ -287,7 +301,7 @@ public class G_Principal {
             Point loc = getJFrame().getLocation();
             loc.translate(20, 20);
             dViaje.setLocation(loc);
-            dViaje.setBounds(10,10,700,500);
+            dViaje.setBounds(10,10,590,400);
             dViaje.setVisible(true);            
           }
           else {
@@ -315,7 +329,7 @@ public class G_Principal {
             Point loc = getJFrame().getLocation();
             loc.translate(20, 20);
             dFrecuencia.setLocation(loc);
-            dFrecuencia.setBounds(10,10,700,500);
+            dFrecuencia.setBounds(10,10,590,400);
             dFrecuencia.setVisible(true);            
           }
           else {
@@ -343,7 +357,7 @@ public class G_Principal {
             Point loc = getJFrame().getLocation();
             loc.translate(20, 20);
             dMedio.setLocation(loc);
-            dMedio.setBounds(10,10,700,500);
+            dMedio.setBounds(10,10,380,300);
             dMedio.setVisible(true);            
           }
           else {
@@ -364,19 +378,19 @@ public class G_Principal {
           if (P_SisRes.usuarioActual.getGrupo().tienePermiso("*") ||
               P_SisRes.usuarioActual.getGrupo().tienePermiso("Ciudades")) {
 
-          if (dCiudad == null) {
-            G_Ciudades guiCiudad = new G_Ciudades();
-            dCiudad = guiCiudad.getDAbmCiudades();
-            dCiudad.pack();
-            Point loc = getJFrame().getLocation();
-            loc.translate(20, 20);
-            dCiudad.setLocation(loc);
-            dCiudad.setBounds(10,10,380,300);
-            dCiudad.setVisible(true);            
-          }
-          else {
-            dCiudad.setVisible(true);
-          }          
+            if (dCiudad == null) {
+              G_Ciudades guiCiudad = new G_Ciudades();
+              dCiudad = guiCiudad.getDAbmCiudades();
+              dCiudad.pack();
+              Point loc = getJFrame().getLocation();
+              loc.translate(20, 20);
+              dCiudad.setLocation(loc);
+              dCiudad.setBounds(10,10,380,300);
+              dCiudad.setVisible(true);            
+            }
+            else {
+              dCiudad.setVisible(true);
+            }          
           }
         }
       });
@@ -391,7 +405,19 @@ public class G_Principal {
         public void actionPerformed(ActionEvent e) {
           if (P_SisRes.usuarioActual.getGrupo().tienePermiso("*") ||
               P_SisRes.usuarioActual.getGrupo().tienePermiso("Ventas")) {
-            
+            if (dVenta == null) {
+              G_Ventas guiVenta = new G_Ventas();
+              dVenta = guiVenta.getDAbmVentas();
+              dVenta.pack();
+              Point loc = getJFrame().getLocation();
+              loc.translate(20, 20);
+              dVenta.setLocation(loc);
+              dVenta.setBounds(10,10,590,400);
+              dVenta.setVisible(true);            
+            }
+            else {
+              dVenta.setVisible(true);
+            }                      
           }
 
         }

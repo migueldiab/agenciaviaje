@@ -261,7 +261,7 @@ public class G_Frecuencias {
     dTramos.setRowCount(0);
     i = 0;
     for (Tramo t : f.getViaje().getTramos()) {      
-      dTramos.addRow(new Object[]{t.getOrigen(),t.getDestino(),Fecha.toString(f.getHoras().get(i)),t.getDuracion()});
+      dTramos.addRow(new Object[]{t.getOrigen(),t.getDestino(),Fecha.horaToString(f.getHoras().get(i)),t.getDuracion()});
       i++;
     }
   }
