@@ -3,6 +3,8 @@
  */
 package sistema;
 
+import java.util.ArrayList;
+
 import modelo.P_SisRes;
 import global.*;
 import viajes.*;
@@ -34,19 +36,56 @@ public class Inicio {
   private static void cargarDatosInicio() {
     Grupo unGrupo = new Grupo();
     unGrupo.setId(2);
-    unGrupo.setNombre("Otro");
+    unGrupo.setNombre("Encargado");
+    ArrayList<String> permisos = new ArrayList<String>();
+    permisos.clear();
+    permisos.add("Viajes");
+    permisos.add("PrecioViaje");
+    permisos.add("NombreViaje");
+    permisos.add("PasajerosViaje");
+    permisos.add("Frecuencias");
+    permisos.add("HorariosFrecuencia");
+    permisos.add("HorariosFrecuencia");
+    unGrupo.setPermisos(permisos);
     SisRes.Grupos.guardar(unGrupo);
     
+    Usuario unUsuario = new Usuario();
+    unUsuario.setNombre("El Encargado");
+    unUsuario.setClave("encargado");
+    unUsuario.setGrupo(unGrupo);
+    unUsuario.setId("encargado");
+    SisRes.Usuarios.guardar(unUsuario);
+
     unGrupo = new Grupo();
     unGrupo.setId(1);
     unGrupo.setNombre("Administrador");
+    permisos = new ArrayList<String>();
+    permisos.clear();
+    permisos.add("*");
+    unGrupo.setPermisos(permisos);
     SisRes.Grupos.guardar(unGrupo);
 
-    Usuario unUsuario = new Usuario();
-    unUsuario.setNombre("Miguel");
-    unUsuario.setClave("abc123");
+    unUsuario = new Usuario();
+    unUsuario.setNombre("El Administrador");
+    unUsuario.setClave("admin");
     unUsuario.setGrupo(unGrupo);
-    unUsuario.setId("mike");
+    unUsuario.setId("admin");
+    SisRes.Usuarios.guardar(unUsuario);
+
+    unGrupo = new Grupo();
+    unGrupo.setId(3);
+    unGrupo.setNombre("Vendedor");
+    permisos = new ArrayList<String>();
+    permisos.clear();
+    permisos.add("Venta");
+    unGrupo.setPermisos(permisos);
+    SisRes.Grupos.guardar(unGrupo);
+
+    unUsuario = new Usuario();
+    unUsuario.setNombre("El Vendedor");
+    unUsuario.setClave("vendedor");
+    unUsuario.setGrupo(unGrupo);
+    unUsuario.setId("vendedor");
     SisRes.Usuarios.guardar(unUsuario);
 
     Ciudad unCiudad = new Ciudad();

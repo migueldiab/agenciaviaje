@@ -39,6 +39,7 @@ public class G_Login extends JFrame {
   public G_Login() {
     super();
     initialize();
+    // Para evitar la autenticación, sacar el comentario de abajo
     G_Principal.cargar(); 
   }
 
@@ -125,6 +126,7 @@ public class G_Login extends JFrame {
           if (Interfaz.login(tUsuario.getText(), tClave.getPassword())) {
             G_Principal.cargar();            
             lError.setText("");
+            tClave.setText("");
             Inicio.ventana.setVisible(false);
           }
           else {

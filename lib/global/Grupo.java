@@ -1,8 +1,11 @@
 package global;
 
+import java.util.ArrayList;
+
 public class Grupo {
   private int    id = 0;
   private String nombre = "";
+  private ArrayList<String> permisos = new ArrayList<String>();
   /**
    * @return the id
    */
@@ -36,5 +39,25 @@ public class Grupo {
   public String toString() {
     // TODO Auto-generated method stub
     return this.getNombre();
+  }
+  /**
+   * @return the permisos
+   */
+  public ArrayList<String> getPermisos() {
+    return permisos;
+  }
+  /**
+   * @param permisos the permisos to set
+   */
+  public void setPermisos(ArrayList<String> permisos) {
+    this.permisos = permisos;
+  }
+  
+  public boolean tienePermiso(String s) {
+    for (String t : this.getPermisos()) {
+      if (t.equals(s)) return true;
+    }
+    return false;
+    
   }
 }

@@ -1,7 +1,6 @@
 package viajes;
 
 public class Frecuencia {
-  private int    id = 0;
   private Tramo  tramo= null;
   private String salida = "";
   private String dias = "";
@@ -29,18 +28,6 @@ public class Frecuencia {
    */
   public void setDisponible(int disponible) {
     this.disponible = disponible;
-  }
-  /**
-   * @return the id
-   */
-  public int getId() {
-    return id;
-  }
-  /**
-   * @param id the id to set
-   */
-  public void setId(int id) {
-    this.id = id;
   }
   /**
    * @return the salida

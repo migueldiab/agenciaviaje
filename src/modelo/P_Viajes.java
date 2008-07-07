@@ -1,5 +1,6 @@
 package modelo;
 
+import viajes.Tramo;
 import viajes.Viaje;
 
 import java.util.ArrayList;
@@ -9,8 +10,11 @@ public class P_Viajes {
   private static ArrayList<Viaje> viajes = new ArrayList<Viaje>();
   
   public static boolean guardar(Viaje u) {
-    int i = P_Viajes.viajes.indexOf(u);
-        
+    
+    for (Tramo t : u.getTramos()) {
+      // Logica de tramos correcta - return false si falla
+    }
+    int i = P_Viajes.viajes.indexOf(u);    
     if (i==-1) {
       viajes.add(u);
       return true;

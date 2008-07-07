@@ -22,8 +22,10 @@ public class Viaje {
   /**
    * @param tramos the tramos to set
    */
-  public void setTramos(ArrayList<Tramo> tramos) {
+  public boolean setTramos(ArrayList<Tramo> tramos) {
+    
     this.tramos = tramos;
+    return true;
   }
   @Override
   public boolean equals(Object obj) {
